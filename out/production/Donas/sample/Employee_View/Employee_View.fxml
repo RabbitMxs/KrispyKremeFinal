@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+
+<?import javafx.scene.control.Label?>
+<?import de.jensd.fx.glyphs.emojione.EmojiOneView?>
+<AnchorPane xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="sample.Employee_View.EmployeeView">
+
+    <VBox AnchorPane.bottomAnchor="0" AnchorPane.topAnchor="0" AnchorPane.leftAnchor="0" styleClass="hbox">
+        <Label fx:id="lbWelcome" text="WELCOME: "/>
+        <Circle fx:id="image" radius="80"/>
+
+        <JFXButton text="Productos">
+            <graphic>
+                <EmojiOneView glyphName="DOUGHNUT" glyphSize="40"/>
+            </graphic>
+        </JFXButton>
+        <JFXButton text="Paquetes"/>
+        <JFXButton text="Crear paquete"/>
+        <JFXButton text="Exit"/>
+    </VBox>
+
+    <VBox AnchorPane.topAnchor="0" AnchorPane.bottomAnchor="0" AnchorPane.rightAnchor="0" styleClass="hbox1">
+        <JFXButton text="Carrito"  contentDisplay="TOP" styleClass="jfx-buttonC">
+            <graphic>
+                <EmojiOneView glyphName="SHOPPING_CART" glyphSize="40" styleClass="glyph-icon1"/>
+            </graphic>
+        </JFXButton>
+        <JFXButton text="Añadir al carrito" styleClass="jfx-buttonB"/>
+
+    </VBox>
+
+</AnchorPane>

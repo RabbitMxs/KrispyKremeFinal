@@ -1,0 +1,77 @@
+.hbox{
+    -fx-background-color: #01704b;
+    -fx-pref-width: 350;
+    -fx-alignment: TOP_CENTER;
+    -fx-spacing: 10;
+    -fx-padding: 20;
+}
+.hbox1{
+    -fx-pref-width: 200;
+    -fx-alignment: CENTER;
+    -fx-spacing: 10;
+    -fx-padding: 20;
+}
+.label{
+    -fx-text-fill: white;
+}
+
+.jfx-button{
+    -fx-background-radius: 5;
+    -fx-pref-width: 350;
+    -fx-pref-height: 50;
+    -fx-text-fill: white;
+}
+.jfx-button:focused{
+    -fx-background-color: #016d48;
+}
+.jfx-button:hover{
+    -fx-text-fill: #01704b;
+    -fx-background-color: white;
+}
+.glyph-icon{
+    -fx-fill: white;
+}
+.jfx-button:hover .glyph-icon{
+    -fx-fill: #01704b;
+}
+
+
+.jfx-buttonB{
+    -fx-text-fill: #01704b;
+}
+.jfx-buttonB:focused{
+    -fx-background-radius: 20;
+    -fx-text-fill: white;
+}
+.jfx-buttonB:hover{
+    -fx-background-color: #01704b;
+    -fx-text-fill: white;
+    -fx-background-radius: 20;
+}
+
+.jfx-buttonC{
+    -fx-background-radius: 20;
+    -fx-background-color: #b60000;
+    -fx-text-fill: white;
+}
+.jfx-buttonC:focused{
+    -fx-background-color: #b60000;
+    -fx-background-radius: 20;
+}
+.jfx-buttonC:hover{
+    -fx-background-color: white;
+    -fx-text-fill: #b60000;
+    -fx-background-radius: 10;
+}
+.glyph-icon1{
+    -fx-fill: white;
+}
+.jfx-buttonC:hover .glyph-icon1{
+    -fx-fill: #b60000;
+}
+
+
+
+.img{
+    -fx-border-radius: 50%;
+}

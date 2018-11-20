@@ -1,0 +1,20 @@
+<component name="libraryTable">
+  <library name="bootstrapfx-core-0.2.3">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/lib/bootstrapfx-core-0.2.3.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/fontawesomefx-commons-8.15.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/fontawesomefx-controls-8.15.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/fontawesomefx-emojione-2.2.7-2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/fontawesomefx-fontawesome-4.7.0-5.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/fontawesomefx-icons525-3.0.0-4.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/fontawesomefx-materialdesignfont-1.7.22-4.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/fontawesomefx-materialicons-2.2.0-5.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/fontawesomefx-materialstackicons-2.1-5.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/fontawesomefx-octicons-4.3.0-5.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/fontawesomefx-weathericons-2.0.10-5.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/jfoenix-8.0.7.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

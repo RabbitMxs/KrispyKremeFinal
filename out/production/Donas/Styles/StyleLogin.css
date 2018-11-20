@@ -1,0 +1,28 @@
+.root{
+    -fx-base: white;
+    -fx-background: white;
+    -fx-control-inner-background: white;
+}
+
+.jfx-text-field{
+    -jfx-focus-color : #01704b;
+}
+
+.jfx-password-field{
+    -jfx-focus-color: #01704b;
+}
+
+.jfx-button:hover{
+    -fx-border-radius: 20;
+    -fx-background-color: "#01704b";
+    -fx-text-fill: white;
+    -fx-background-radius: 22;
+}
+
+.jfx-button:pressed{
+    -fx-border-radius: 20;
+    -fx-background-color: "#01704b";
+    -fx-text-fill: white;
+    -fx-background-radius: 22;
+    -fx-rotate: 5;
+}
