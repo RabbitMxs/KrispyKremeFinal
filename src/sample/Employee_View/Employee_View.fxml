@@ -15,24 +15,24 @@
         <Label fx:id="lbWelcome" text="WELCOME: " style="-fx-text-fill: white"/>
         <Circle fx:id="image" radius="80"/>
 
-        <JFXButton text="          Productos" contentDisplay="LEFT" >
+        <JFXButton text="          Productos" fx:id="btnProduct">
             <graphic>
                 <EmojiOneView glyphName="DOUGHNUT" glyphSize="40"/>
             </graphic>
         </JFXButton>
 
-        <JFXButton text="          Paquetes">
+        <JFXButton text="          Paquetes" fx:id="btnPackage">
             <graphic>
                 <FontAwesomeIconView glyphName="INBOX" glyphSize="40" />
             </graphic>
         </JFXButton>
 
-        <JFXButton text="  Crear paquete">
+        <JFXButton text="  Crear paquete" fx:id="btnNewPackage">
             <graphic>
                 <MaterialDesignIconView glyphName="NEW_BOX" glyphSize="40"/>
             </graphic>
         </JFXButton>
-        <JFXButton text="                  Exit">
+        <JFXButton text="                  Exit" fx:id="btnExit">
             <graphic>
                 <FontAwesomeIconView glyphName="WINDOW_CLOSE_ALT" glyphSize="40"/>
             </graphic>
@@ -41,7 +41,7 @@
 
     <GridPane fx:id="pnPrincipal" vgap="10" AnchorPane.topAnchor="0" AnchorPane.bottomAnchor="0" AnchorPane.leftAnchor="350" AnchorPane.rightAnchor="0">
 
-        <TableView fx:id="tableProduct" GridPane.rowIndex="0" GridPane.columnIndex="0" prefWidth="817" prefHeight="707" visible="false">
+        <TableView fx:id="tableProduct" GridPane.rowIndex="0" GridPane.columnIndex="0" prefWidth="817" prefHeight="707">
             <columns>
 
                 <TableColumn text="Imagen" prefWidth="204.25">
@@ -69,7 +69,7 @@
                 </TableColumn>
             </columns>
         </TableView>
-        <TableView fx:id="tablePackage" GridPane.rowIndex="0" GridPane.columnIndex="0" prefWidth="817" prefHeight="707" visible="true">
+        <TableView fx:id="tablePackage" GridPane.rowIndex="0" GridPane.columnIndex="0" prefWidth="817" prefHeight="707">
             <columns>
                 <TableColumn text="Nombre del Paquete" prefWidth="272.33">
                     <cellValueFactory>
@@ -92,7 +92,7 @@
         </TableView>
 
 
-        <VBox fx:id="VbCarrito" styleClass="hbox1" GridPane.rowIndex="0" GridPane.columnIndex="1" visible="true">
+        <VBox fx:id="vbCarrito" styleClass="hbox1" GridPane.rowIndex="0" GridPane.columnIndex="1">
             <JFXButton text="Carrito" styleClass="jfx-buttonC">
                 <graphic>
                     <MaterialIconView glyphName="SHOPPING_CART" glyphSize="40" styleClass="glyph-icon1"/>
@@ -104,7 +104,7 @@
                 </graphic>
             </JFXButton>
         </VBox>
-        <VBox fx:id="VbPackage" styleClass="hbox1" GridPane.rowIndex="0" GridPane.columnIndex="1" visible="false">
+        <VBox fx:id="vbPackage" styleClass="hbox1" GridPane.rowIndex="0" GridPane.columnIndex="1">
             <JFXButton text="Paquete" styleClass="jfx-buttonC">
                 <graphic>
                     <FontAwesomeIconView glyphName="INBOX" glyphSize="40" styleClass="glyph-icon1"/>
