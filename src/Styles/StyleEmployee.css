@@ -1,5 +1,5 @@
 .hbox{
-    -fx-background-color: #01704b;
+    -fx-background-color: #016d48;
     -fx-pref-width: 350;
     -fx-alignment: TOP_CENTER;
     -fx-spacing: 10;
@@ -13,13 +13,11 @@
 }
 
 .jfx-button{
+    -fx-background-color: #016d48;
     -fx-background-radius: 5;
     -fx-pref-width: 350;
     -fx-pref-height: 50;
     -fx-text-fill: white;
-}
-.jfx-button:focused{
-    -fx-background-color: #016d48;
 }
 .jfx-button:hover{
     -fx-text-fill: #01704b;
@@ -32,19 +30,6 @@
     -fx-fill: #01704b;
 }
 
-
-.jfx-buttonB{
-    -fx-text-fill: #01704b;
-}
-.jfx-buttonB:focused{
-    -fx-background-radius: 20;
-    -fx-text-fill: white;
-}
-.jfx-buttonB:hover{
-    -fx-background-color: #01704b;
-    -fx-text-fill: white;
-    -fx-background-radius: 20;
-}
 
 .jfx-buttonC{
     -fx-background-radius: 20;

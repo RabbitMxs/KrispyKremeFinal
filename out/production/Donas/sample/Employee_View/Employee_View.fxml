@@ -1,18 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import com.jfoenix.controls.JFXButton?>
-<?import javafx.scene.shape.Circle?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.VBox?>
-
-<?import javafx.scene.control.Label?>
+<?import com.jfoenix.controls.*?>
 <?import de.jensd.fx.glyphs.emojione.EmojiOneView?>
-<?import de.jensd.fx.glyphs.materialdesignicons.MaterialDesignIconView?>
 <?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
-<?import javafx.scene.layout.GridPane?>
-<?import javafx.scene.control.TableView?>
-<?import javafx.scene.control.TableColumn?>
+<?import de.jensd.fx.glyphs.materialdesignicons.MaterialDesignIconView?>
 <?import javafx.scene.control.cell.PropertyValueFactory?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.Circle?>
+<?import de.jensd.fx.glyphs.materialicons.MaterialIconView?>
 <AnchorPane xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="sample.Employee_View.EmployeeView">
 
     <VBox AnchorPane.bottomAnchor="0" AnchorPane.topAnchor="0" AnchorPane.leftAnchor="0" styleClass="hbox">
@@ -43,47 +39,86 @@
         </JFXButton>
     </VBox>
 
-    <GridPane fx:id="pnProducto" vgap="10" AnchorPane.topAnchor="0" AnchorPane.bottomAnchor="0" AnchorPane.leftAnchor="350" AnchorPane.rightAnchor="0">
+    <GridPane fx:id="pnPrincipal" vgap="10" AnchorPane.topAnchor="0" AnchorPane.bottomAnchor="0" AnchorPane.leftAnchor="350" AnchorPane.rightAnchor="0">
 
-        <TableView fx:id="table" GridPane.rowIndex="0" GridPane.columnIndex="0" prefWidth="817" prefHeight="707" >
+        <TableView fx:id="tableProduct" GridPane.rowIndex="0" GridPane.columnIndex="0" prefWidth="817" prefHeight="707" visible="false">
             <columns>
 
                 <TableColumn text="Imagen" prefWidth="204.25">
                     <cellValueFactory>
-                        <PropertyValueFactory property="Image"/>
+                        <PropertyValueFactory property=""/>
                     </cellValueFactory>
                 </TableColumn>
 
                 <TableColumn text="Nombre del Producto" prefWidth="204.25">
                     <cellValueFactory>
-                        <PropertyValueFactory property="date_hour"/>
+                        <PropertyValueFactory property=""/>
                     </cellValueFactory>
                 </TableColumn>
 
                 <TableColumn text="Description" prefWidth="204.25">
                     <cellValueFactory>
-                        <PropertyValueFactory property="date_hour"/>
+                        <PropertyValueFactory property=""/>
                     </cellValueFactory>
                 </TableColumn>
 
                 <TableColumn text="Precio" prefWidth="204.25">
                     <cellValueFactory>
-                        <PropertyValueFactory property="date_hour"/>
+                        <PropertyValueFactory property=""/>
+                    </cellValueFactory>
+                </TableColumn>
+            </columns>
+        </TableView>
+        <TableView fx:id="tablePackage" GridPane.rowIndex="0" GridPane.columnIndex="0" prefWidth="817" prefHeight="707" visible="true">
+            <columns>
+                <TableColumn text="Nombre del Paquete" prefWidth="272.33">
+                    <cellValueFactory>
+                        <PropertyValueFactory property=""/>
                     </cellValueFactory>
                 </TableColumn>
 
+                <TableColumn text="Description" prefWidth="272.33">
+                    <cellValueFactory>
+                        <PropertyValueFactory property=""/>
+                    </cellValueFactory>
+                </TableColumn>
+
+                <TableColumn text="Precio" prefWidth="272.33">
+                    <cellValueFactory>
+                        <PropertyValueFactory property=""/>
+                    </cellValueFactory>
+                </TableColumn>
             </columns>
         </TableView>
 
-        <VBox  styleClass="hbox1" GridPane.rowIndex="0" GridPane.columnIndex="1">
-            <JFXButton text="Carrito"  contentDisplay="TOP" styleClass="jfx-buttonC">
+
+        <VBox fx:id="VbCarrito" styleClass="hbox1" GridPane.rowIndex="0" GridPane.columnIndex="1" visible="true">
+            <JFXButton text="Carrito" styleClass="jfx-buttonC">
                 <graphic>
-                    <EmojiOneView glyphName="SHOPPING_CART" glyphSize="40" styleClass="glyph-icon1"/>
+                    <MaterialIconView glyphName="SHOPPING_CART" glyphSize="40" styleClass="glyph-icon1"/>
                 </graphic>
             </JFXButton>
-            <JFXButton text="Añadir al carrito" styleClass="jfx-buttonB"/>
+            <JFXButton text="Añadir al carrito" style="-fx-background-radius: 20">
+                <graphic>
+                    <MaterialIconView glyphName="ADD_SHOPPING_CART" glyphSize="40" styleClass="glyph-icon1"/>
+                </graphic>
+            </JFXButton>
+        </VBox>
+        <VBox fx:id="VbPackage" styleClass="hbox1" GridPane.rowIndex="0" GridPane.columnIndex="1" visible="false">
+            <JFXButton text="Paquete" styleClass="jfx-buttonC">
+                <graphic>
+                    <FontAwesomeIconView glyphName="INBOX" glyphSize="40" styleClass="glyph-icon1"/>
+                </graphic>
+            </JFXButton>
+
+            <JFXButton text="Añadir al paquete" style="-fx-background-radius: 20">
+                <graphic>
+                    <EmojiOneView glyphName="INBOX_TRAY" glyphSize="40"/>
+                </graphic>
+            </JFXButton>
 
         </VBox>
     </GridPane>
+
 
 </AnchorPane>
