@@ -1,4 +1,4 @@
-package sample.models;
+package sample.models.clases;
 
 public class Details_package {
     int id_package,id_product;

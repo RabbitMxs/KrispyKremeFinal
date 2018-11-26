@@ -1,4 +1,4 @@
-package sample.models;
+package sample.models.clases;
 
 import java.sql.Blob;
 

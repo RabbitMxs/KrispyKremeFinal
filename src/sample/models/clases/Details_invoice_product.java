@@ -1,4 +1,4 @@
-package sample.models;
+package sample.models.clases;
 
 public class Details_invoice_product {
     int id_invoice,id_product;
