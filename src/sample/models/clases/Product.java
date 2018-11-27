@@ -11,12 +11,11 @@ public class Product {
     Blob image;
     int id_category;
 
-    public Product(int id_product, String name_pro, double price_pro, String description_pro, Blob image, int id_category) {
+    public Product(int id_product, String name_pro, double price_pro, String description_pro, int id_category) {
         this.id_product = id_product;
         this.name_pro = name_pro;
         this.price_pro = price_pro;
         this.description_pro = description_pro;
-        this.image = image;
         this.id_category = id_category;
     }
 

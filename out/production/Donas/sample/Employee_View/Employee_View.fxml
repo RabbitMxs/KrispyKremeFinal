@@ -43,49 +43,48 @@
 
         <TableView fx:id="tableProduct" GridPane.rowIndex="0" GridPane.columnIndex="0" prefWidth="817" prefHeight="707">
             <columns>
-
-                <TableColumn text="Imagen" prefWidth="204.25">
+                <TableColumn text="Imagen" prefWidth="204.25" style="-fx-alignment: center">
                     <cellValueFactory>
-                        <PropertyValueFactory property=""/>
+                        <PropertyValueFactory property="image"/>
                     </cellValueFactory>
                 </TableColumn>
 
-                <TableColumn text="Nombre del Producto" prefWidth="204.25">
+                <TableColumn text="Nombre del Producto" prefWidth="200" style="-fx-alignment: center">
                     <cellValueFactory>
-                        <PropertyValueFactory property=""/>
+                        <PropertyValueFactory property="name_pro"/>
                     </cellValueFactory>
                 </TableColumn>
 
-                <TableColumn text="Description" prefWidth="204.25">
+                <TableColumn text="Description" prefWidth="296" style="-fx-alignment: center">
                     <cellValueFactory>
-                        <PropertyValueFactory property=""/>
+                        <PropertyValueFactory property="description_pro"/>
                     </cellValueFactory>
                 </TableColumn>
 
-                <TableColumn text="Precio" prefWidth="204.25">
+                <TableColumn text="Precio" prefWidth="100" style="-fx-alignment: center">
                     <cellValueFactory>
-                        <PropertyValueFactory property=""/>
+                        <PropertyValueFactory property="price_pro"/>
                     </cellValueFactory>
                 </TableColumn>
             </columns>
         </TableView>
-        <TableView fx:id="tablePackage" GridPane.rowIndex="0" GridPane.columnIndex="0" prefWidth="817" prefHeight="707">
+        <TableView fx:id="tablePackage" GridPane.rowIndex="0" GridPane.columnIndex="0" prefWidth="817" prefHeight="707" style="-fx-alignment: center">
             <columns>
-                <TableColumn text="Nombre del Paquete" prefWidth="272.33">
+                <TableColumn text="Nombre del Paquete" prefWidth="204.25" style="-fx-alignment: center">
                     <cellValueFactory>
-                        <PropertyValueFactory property=""/>
+                        <PropertyValueFactory property="name_pa" />
                     </cellValueFactory>
                 </TableColumn>
 
-                <TableColumn text="Description" prefWidth="272.33">
+                <TableColumn text="Description" prefWidth="512.75" style="-fx-alignment: center">
                     <cellValueFactory>
-                        <PropertyValueFactory property=""/>
+                        <PropertyValueFactory property="description_pa"/>
                     </cellValueFactory>
                 </TableColumn>
 
-                <TableColumn text="Precio" prefWidth="272.33">
+                <TableColumn text="Precio" prefWidth="100" style="-fx-alignment: center">
                     <cellValueFactory>
-                        <PropertyValueFactory property=""/>
+                        <PropertyValueFactory property="price_pa"/>
                     </cellValueFactory>
                 </TableColumn>
             </columns>

@@ -3,11 +3,21 @@ package sample.models.clases;
 public class Package {
     int id_package;
     String name_pa,description_pa;
+    double price_pa;
 
-    public Package(int id_package, String name_pa, String description_pa) {
+    public Package(int id_package, String name_pa, String description_pa, double price_pa) {
         this.id_package = id_package;
         this.name_pa = name_pa;
         this.description_pa = description_pa;
+        this.price_pa = price_pa;
+    }
+
+    public double getPrice_pa() {
+        return price_pa;
+    }
+
+    public void setPrice_pa(double price_pa) {
+        this.price_pa = price_pa;
     }
 
     public int getId_package() {return id_package; }

@@ -11,6 +11,10 @@ import javafx.scene.image.Image;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.ImagePattern;
 import javafx.scene.shape.Circle;
+import sample.models.clases.Product;
+import sample.models.dao.DonasDao;
+import sample.models.dao.MySQL;
+import sample.models.dao.PackageDao;
 
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -20,7 +24,10 @@ public class EmployeeView implements Initializable {
     JFXButton btnProduct,btnPackage,btnNewPackage,btnExit;
 
     @FXML
-    TableView tableProduct=new TableView(), tablePackage=new TableView();
+    TableView<Product> tableProduct=new TableView<>();
+
+    @FXML
+    TableView tablePackage=new TableView();
 
     @FXML
     VBox vbCarrito,vbPackage;
@@ -57,6 +64,8 @@ public class EmployeeView implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+        DonasDao donasDao=new DonasDao(MySQL.getConnection());
+        PackageDao packageDao=new PackageDao(MySQL.getConnection());
         tableProduct.setVisible(true);
         tablePackage.setVisible(false);
         vbCarrito.setVisible(true);
@@ -66,5 +75,7 @@ public class EmployeeView implements Initializable {
         btnNewPackage.setOnAction(m_mostrar);
         btnPackage.setOnAction(m_mostrar);
         btnProduct.setOnAction(m_mostrar);
+        tableProduct.setItems(donasDao.findAll());
+        tablePackage.setItems(packageDao.findAll());
     }
 }
