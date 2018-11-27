@@ -1,16 +1,7 @@
 package sample.models.dao;
 
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
-import sample.models.clases.Package;
-import sample.models.clases.Product;
-
-import java.sql.Connection;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
-
 public class PackageDao {
+    /*
     Connection conn;
 
     private static ObservableList<Product> data = FXCollections.observableArrayList();
@@ -46,7 +37,7 @@ public class PackageDao {
         return customers;
     }
 
-    /*
+
     public ObservableList<Customer> fetchAll() {
         ObservableList<Customer> customers = FXCollections.observableArrayList();
         try {

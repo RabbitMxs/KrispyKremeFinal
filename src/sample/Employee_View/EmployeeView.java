@@ -12,9 +12,7 @@ import javafx.scene.layout.VBox;
 import javafx.scene.paint.ImagePattern;
 import javafx.scene.shape.Circle;
 import sample.models.clases.Product;
-import sample.models.dao.DonasDao;
-import sample.models.dao.MySQL;
-import sample.models.dao.PackageDao;
+import sample.models.dao.Dao;
 
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -64,8 +62,7 @@ public class EmployeeView implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        DonasDao donasDao=new DonasDao(MySQL.getConnection());
-        PackageDao packageDao=new PackageDao(MySQL.getConnection());
+        Dao dao=new Dao();
         tableProduct.setVisible(true);
         tablePackage.setVisible(false);
         vbCarrito.setVisible(true);
@@ -75,7 +72,7 @@ public class EmployeeView implements Initializable {
         btnNewPackage.setOnAction(m_mostrar);
         btnPackage.setOnAction(m_mostrar);
         btnProduct.setOnAction(m_mostrar);
-        tableProduct.setItems(donasDao.findAll());
-        tablePackage.setItems(packageDao.findAll());
+        tableProduct.setItems(dao.findAllProduct());
+        tablePackage.setItems(dao.findAllPackage());
     }
 }
