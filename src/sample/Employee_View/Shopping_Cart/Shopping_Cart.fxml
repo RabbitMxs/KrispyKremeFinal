@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<AnchorPane xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" prefHeight="400.0" prefWidth="600.0">
+    <TableView fx:id="table_venta">
+        <columns>
+            <TableColumn text="Cantidad" style="-fx-alignment: center">
+                <cellValueFactory>
+                    <PropertyValueFactory property="cantidad"/>
+                </cellValueFactory>
+            </TableColumn>
+
+            <TableColumn text="Nombre" style="-fx-alignment: center">
+                <cellValueFactory>
+                    <PropertyValueFactory property="name_pro"/>
+                </cellValueFactory>
+            </TableColumn>
+
+            <TableColumn text="Precio" style="-fx-alignment: center">
+                <cellValueFactory>
+                    <PropertyValueFactory property="price_pro"/>
+                </cellValueFactory>
+            </TableColumn>
+
+        </columns>
+    </TableView>
+</AnchorPane>

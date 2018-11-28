@@ -7,6 +7,7 @@
 <?import de.jensd.fx.glyphs.materialicons.MaterialIconView?>
 <?import javafx.scene.control.cell.*?>
 <?import javafx.scene.control.*?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.shape.Circle?>
 <AnchorPane xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="sample.Employee_View.EmployeeView">
@@ -43,11 +44,6 @@
 
         <TableView fx:id="tableProduct" GridPane.rowIndex="0" GridPane.columnIndex="0" prefWidth="817" prefHeight="707">
             <columns>
-                <TableColumn text="Imagen" prefWidth="204.25" style="-fx-alignment: center">
-                    <cellValueFactory>
-                        <PropertyValueFactory property="image"/>
-                    </cellValueFactory>
-                </TableColumn>
 
                 <TableColumn text="Nombre del Producto" prefWidth="200" style="-fx-alignment: center">
                     <cellValueFactory>
@@ -55,7 +51,7 @@
                     </cellValueFactory>
                 </TableColumn>
 
-                <TableColumn text="Description" prefWidth="296" style="-fx-alignment: center">
+                <TableColumn text="Description" prefWidth="517" style="-fx-alignment: center">
                     <cellValueFactory>
                         <PropertyValueFactory property="description_pro"/>
                     </cellValueFactory>
@@ -92,12 +88,14 @@
 
 
         <VBox fx:id="vbCarrito" styleClass="hbox1" GridPane.rowIndex="0" GridPane.columnIndex="1">
-            <JFXButton text="Carrito" styleClass="jfx-buttonC">
+            <ImageView/>
+
+            <JFXButton fx:id="btnCarrito" text="Carrito" styleClass="jfx-buttonC">
                 <graphic>
                     <MaterialIconView glyphName="SHOPPING_CART" glyphSize="40" styleClass="glyph-icon1"/>
                 </graphic>
             </JFXButton>
-            <JFXButton text="Añadir al carrito" style="-fx-background-radius: 20">
+            <JFXButton fx:id="btnAgregaCarrito" text="Añadir al carrito" style="-fx-background-radius: 20">
                 <graphic>
                     <MaterialIconView glyphName="ADD_SHOPPING_CART" glyphSize="40" styleClass="glyph-icon1"/>
                 </graphic>

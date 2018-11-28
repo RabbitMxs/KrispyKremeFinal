@@ -10,6 +10,7 @@ public class Product {
     String description_pro;
     Blob image;
     int id_category;
+    int cantidad;
 
     public Product(int id_product, String name_pro, double price_pro, String description_pro, int id_category) {
         this.id_product = id_product;
@@ -43,15 +44,21 @@ public class Product {
 
     public void setId_category(int id_category) {this.id_category = id_category; }
 
+    public int getCantidad() {
+        return cantidad;
+    }
+
+    public void setCantidad(int cantidad) {
+        this.cantidad = cantidad;
+    }
+
     @Override
     public String toString() {
         return "Product{" +
                 "id_product=" + id_product +
                 ", name_pro='" + name_pro + '\'' +
                 ", price_pro=" + price_pro +
-                ", description_pro='" + description_pro + '\'' +
-                ", image=" + image +
-                ", id_category=" + id_category +
+                ", cantidad=" + cantidad +
                 '}';
     }
 }
