@@ -10,33 +10,45 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableView;
+import javafx.scene.control.TextInputDialog;
 import javafx.scene.image.Image;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.ImagePattern;
 import javafx.scene.shape.Circle;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 import sample.Employee_View.Shopping_Cart.ShoppingCart;
+import sample.models.clases.Employee;
+import sample.models.clases.Package;
 import sample.models.clases.Product;
 import sample.models.dao.Dao;
 
-import javax.swing.*;
 import java.io.IOException;
 import java.net.URL;
+import java.util.Optional;
 import java.util.ResourceBundle;
 
 public class EmployeeView implements Initializable {
-    ObservableList<Product> list= FXCollections.observableArrayList();
+    ActionEvent controller;
+    static double xOffset=0;
+    static double yOffser=0;
+    Dao dao;
+    static Employee employee;
+    private static ObservableList<Product> list_product= FXCollections.observableArrayList();
+    private static ObservableList<Product> new_package=FXCollections.observableArrayList();
 
     @FXML
-    JFXButton btnProduct,btnPackage,btnNewPackage,btnExit,btnCarrito,btnAgregaCarrito;
+    JFXButton btnProduct,btnPackage,btnNewPackage,btnExit,btnCarrito,btnAgregaCarrito,btnAgregaCarrito1,btnNuevoPackage,btnAddPackage;
 
     @FXML
     TableView<Product> tableProduct=new TableView<>();
 
     @FXML
-    TableView tablePackage=new TableView();
+    TableView<Package> tablePackage=new TableView();
 
     @FXML
     VBox vbCarrito,vbPackage;
@@ -47,7 +59,19 @@ public class EmployeeView implements Initializable {
     @FXML
     Label lbWelcome;
 
-    EventHandler<ActionEvent> m_mostrar= new EventHandler<ActionEvent>() {
+    public void setController(ActionEvent controller) {
+        this.controller = controller;
+    }
+
+    public static void setList(ObservableList<Product> lit) {
+        list_product = lit;
+    }
+
+    public void setEmployee(Employee employee) {
+        EmployeeView.employee = employee;
+    }
+
+    EventHandler<ActionEvent> event_mostrar= new EventHandler<ActionEvent>() {
         @Override
         public void handle(ActionEvent event) {
             JFXButton button= (JFXButton) event.getSource();
@@ -60,29 +84,59 @@ public class EmployeeView implements Initializable {
                 }else {
                     vbCarrito.setVisible(true);
                     vbPackage.setVisible(false);
+                    btnAgregaCarrito.setVisible(true);
+                    btnAgregaCarrito1.setVisible(false);
                 }
             }else{
                 tableProduct.setVisible(false);
                 tablePackage.setVisible(true);
                 vbCarrito.setVisible(true);
                 vbPackage.setVisible(false);
+                btnAgregaCarrito.setVisible(false);
+                btnAgregaCarrito1.setVisible(true);
             }
         }
     };
 
-    EventHandler<ActionEvent> event_cantidad=new EventHandler<ActionEvent>() {
+    EventHandler<ActionEvent> event_Cantidad=new EventHandler<ActionEvent>() {
         @Override
         public void handle(ActionEvent event) {
-            Product product=tableProduct.getSelectionModel().getSelectedItem();
-            product.setCantidad(Integer.parseInt(JOptionPane.showInputDialog(null,"Teclea la cantidad de "+ product.getName_pro(),"Cantidad",1)));
-            list.add(product);
-            for (Product p:list){
-                System.out.println(p);
+            if(event.getSource() == btnAgregaCarrito){
+                Product product=tableProduct.getSelectionModel().getSelectedItem();
+                product.setCantidad(Cantidad(product));
+                addList(product);
+            }else{
+                Package pack=tablePackage.getSelectionModel().getSelectedItem();
+                Product product=new Product(pack.getName_pa(),pack.getPrice_pa());
+                product.setCantidad(Cantidad(product));
+                addList(product);
             }
+
         }
     };
 
-    EventHandler<ActionEvent> m_Carrito=new EventHandler<ActionEvent>() {
+    public void addList(Product product){
+        if (product.getCantidad()!=0){
+            list_product.add(product);
+        }
+    }
+
+    public int Cantidad( Product product){
+        try{
+            TextInputDialog inputDialog=new TextInputDialog();
+            inputDialog.setTitle("Cantidad");
+            inputDialog.setHeaderText(null);
+            inputDialog.setContentText("Teclea la cantidad de "+product.getName_pro());
+            inputDialog.initStyle(StageStyle.UTILITY);
+            Optional<String> respuesta=inputDialog.showAndWait();
+            return Integer.parseInt(respuesta.get());
+        }catch (Exception e){
+            System.out.println(e);
+            return 0;
+        }
+    }
+
+     static EventHandler<ActionEvent> event_Carrito=new EventHandler<ActionEvent>() {
         @Override
         public void handle(ActionEvent event) {
             try {
@@ -91,11 +145,28 @@ public class EmployeeView implements Initializable {
                 Parent root=null;
                 FXMLLoader loader= new FXMLLoader(getClass().getResource("Shopping_cart/Shopping_cart.fxml"));
                 ShoppingCart confi=new ShoppingCart();
-                confi.setList(list);
+                confi.setList(list_product);
+                confi.setEmployee(employee);
                 loader.setController(confi);
                 root=loader.load();
                 Scene scene=new Scene(root);
                 confirmation.setScene(scene);
+                root.setOnMousePressed(new EventHandler<MouseEvent>() {
+                    @Override
+                    public void handle(MouseEvent event) {
+                        xOffset=event.getSceneX();
+                        yOffser=event.getSceneY();
+                    }
+                });
+
+                root.setOnMouseDragged(new EventHandler<MouseEvent>() {
+                    @Override
+                    public void handle(MouseEvent event) {
+                        confirmation.setX(event.getScreenX()-xOffset);
+                        confirmation.setY(event.getScreenY()-yOffser);
+                    }
+                });
+                confirmation.initStyle(StageStyle.UNDECORATED);
                 confirmation.show();
             } catch (IOException e) {
                 e.printStackTrace();
@@ -103,22 +174,78 @@ public class EmployeeView implements Initializable {
         }
     };
 
+    EventHandler<ActionEvent> event_Close=new EventHandler<ActionEvent>() {
+        @Override
+        public void handle(ActionEvent event) {
+            ((Stage)((Button) event.getSource()).getScene().getWindow()).close();
+            list_product.clear();
+            new_package.clear();
+            ((Stage)((Button) controller.getSource()).getScene().getWindow()).show();
+        }
+    };
+
+    EventHandler<ActionEvent> event_AddPackage=new EventHandler<ActionEvent>() {
+        @Override
+        public void handle(ActionEvent event) {
+            if(m_cuenta()<12){
+                m_CantidadPackage();
+            }else{
+                System.out.println("debes agregar el paquete actual al carrito");
+            }
+        }
+    };
+
+    public int m_cuenta(){
+        int suma=0;
+        for (Product p:new_package) {
+            suma+=p.getCantidad();
+        }
+        return suma;
+    }
+
+    public void m_CantidadPackage(){
+        Product product=tableProduct.getSelectionModel().getSelectedItem();
+        try{
+            TextInputDialog inputDialog=new TextInputDialog();
+            inputDialog.setTitle("Cantidad");
+            inputDialog.setHeaderText(null);
+            inputDialog.setContentText("Teclea la cantidad de "+product.getName_pro()+" que quieres agregar al paquete");
+            inputDialog.initStyle(StageStyle.UTILITY);
+            Optional<String> respuesta=inputDialog.showAndWait();
+            int cantidad=Integer.parseInt(respuesta.get());
+            product.setCantidad(cantidad);
+            if(m_cuenta()+cantidad<=12){
+                System.out.println("Se agrego con exito");
+                new_package.add(product);
+            }else{
+                System.out.println("no se puede agregar mas de 12 domas");
+            }
+        }catch (Exception e){
+            System.out.println(e);
+        }
+    }
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        Dao dao=new Dao();
+        dao=new Dao();
+        lbWelcome.setText(lbWelcome.getText()+employee.getName_em());
         tableProduct.setVisible(true);
         tablePackage.setVisible(false);
         vbCarrito.setVisible(true);
         vbPackage.setVisible(false);
+        btnAgregaCarrito1.setVisible(false);
+        btnAgregaCarrito.setVisible(true);
         Image m=new Image("/Images/Employee.jpg");
         image.setFill(new ImagePattern(m));
-        btnNewPackage.setOnAction(m_mostrar);
-        btnPackage.setOnAction(m_mostrar);
-        btnProduct.setOnAction(m_mostrar);
+        btnNewPackage.setOnAction(event_mostrar);
+        btnPackage.setOnAction(event_mostrar);
+        btnProduct.setOnAction(event_mostrar);
         tableProduct.setItems(dao.findAllProduct());
         tablePackage.setItems(dao.findAllPackage());
-        btnAgregaCarrito.setOnAction(event_cantidad);
-
+        btnAgregaCarrito.setOnAction(event_Cantidad);
+        btnAgregaCarrito1.setOnAction(event_Cantidad);
+        btnCarrito.setOnAction(event_Carrito);
+        btnExit.setOnAction(event_Close);
+        btnAddPackage.setOnAction(event_AddPackage);
     }
 }

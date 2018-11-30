@@ -10,10 +10,10 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.shape.Circle?>
-<AnchorPane xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="sample.Employee_View.EmployeeView">
+<AnchorPane xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml">
 
     <VBox AnchorPane.bottomAnchor="0" AnchorPane.topAnchor="0" AnchorPane.leftAnchor="0" styleClass="hbox">
-        <Label fx:id="lbWelcome" text="WELCOME: " style="-fx-text-fill: white"/>
+        <Label fx:id="lbWelcome" text="Bienvenido " style="-fx-text-fill: white"/>
         <Circle fx:id="image" radius="80"/>
 
         <JFXButton text="          Productos" fx:id="btnProduct">
@@ -45,7 +45,7 @@
         <TableView fx:id="tableProduct" GridPane.rowIndex="0" GridPane.columnIndex="0" prefWidth="817" prefHeight="707">
             <columns>
 
-                <TableColumn text="Nombre del Producto" prefWidth="200" style="-fx-alignment: center">
+                <TableColumn text="Nombre del Producto" prefWidth="200" style="-fx-alignment: center;">
                     <cellValueFactory>
                         <PropertyValueFactory property="name_pro"/>
                     </cellValueFactory>
@@ -95,20 +95,27 @@
                     <MaterialIconView glyphName="SHOPPING_CART" glyphSize="40" styleClass="glyph-icon1"/>
                 </graphic>
             </JFXButton>
-            <JFXButton fx:id="btnAgregaCarrito" text="Añadir al carrito" style="-fx-background-radius: 20">
-                <graphic>
-                    <MaterialIconView glyphName="ADD_SHOPPING_CART" glyphSize="40" styleClass="glyph-icon1"/>
-                </graphic>
-            </JFXButton>
+            <GridPane>
+                <JFXButton fx:id="btnAgregaCarrito" text="Añadir al carrito" GridPane.rowIndex="0" GridPane.columnIndex="0" style="-fx-background-radius: 20">
+                    <graphic>
+                        <MaterialIconView glyphName="ADD_SHOPPING_CART" glyphSize="40" styleClass="glyph-icon1"/>
+                    </graphic>
+                </JFXButton>
+                <JFXButton fx:id="btnAgregaCarrito1" text="Añadir al carrito" GridPane.rowIndex="0" GridPane.columnIndex="0" style="-fx-background-radius: 20">
+                    <graphic>
+                        <MaterialIconView glyphName="ADD_SHOPPING_CART" glyphSize="40" styleClass="glyph-icon1"/>
+                    </graphic>
+                </JFXButton>
+            </GridPane>
         </VBox>
         <VBox fx:id="vbPackage" styleClass="hbox1" GridPane.rowIndex="0" GridPane.columnIndex="1">
-            <JFXButton text="Paquete" styleClass="jfx-buttonC">
+            <JFXButton fx:id="btnNuevoPackage" text="Paquete" styleClass="jfx-buttonC">
                 <graphic>
                     <FontAwesomeIconView glyphName="INBOX" glyphSize="40" styleClass="glyph-icon1"/>
                 </graphic>
             </JFXButton>
 
-            <JFXButton text="Añadir al paquete" style="-fx-background-radius: 20">
+            <JFXButton fx:id="btnAddPackage" text="Añadir al paquete" style="-fx-background-radius: 20">
                 <graphic>
                     <EmojiOneView glyphName="INBOX_TRAY" glyphSize="40"/>
                 </graphic>

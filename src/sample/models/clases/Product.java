@@ -20,6 +20,11 @@ public class Product {
         this.id_category = id_category;
     }
 
+    public Product(String name_pro, double price_pro) {
+        this.name_pro = name_pro;
+        this.price_pro = price_pro;
+    }
+
     public int getId_product() { return id_product; }
 
     public void setId_product(int id_product) {this.id_product = id_product; }

@@ -28,6 +28,7 @@
 
         <JFXTextField fx:id="txtUser" promptText="User" prefWidth="100"/>
         <JFXPasswordField fx:id="txtPassword" promptText="Password" prefWidth="100"/>
-        <JFXButton fx:id="btnLongin" text="Login" prefWidth="100"/>
+        <Label fx:id="lbError" text="Ingrese de nuevo sus datos" textFill="red" visible="false"/>
+        <JFXButton fx:id="btnLogin" text="Login" prefWidth="100"/>
     </VBox>
 </AnchorPane>

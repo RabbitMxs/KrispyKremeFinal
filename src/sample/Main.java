@@ -10,13 +10,10 @@ public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception{
-        Parent root = FXMLLoader.load(getClass().getResource("Employee_View/Employee_View.fxml"));//sample.fxml
-        //primaryStage.setFullScreen(true);
-        primaryStage.setMaximized(true);
-        primaryStage.setResizable(true);
+        Parent root = FXMLLoader.load(getClass().getResource("sample.fxml"));
         primaryStage.setTitle("Login");
         Scene scene=new Scene(root);
-        scene.getStylesheets().add("/Styles/StyleEmployee.css");
+        scene.getStylesheets().add("/Styles/StyleLogin.css");
         primaryStage.setScene(scene);
         primaryStage.show();
     }
