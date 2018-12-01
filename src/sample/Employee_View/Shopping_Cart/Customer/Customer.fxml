@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<GridPane xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" prefHeight="400.0" prefWidth="600.0">
+    <Label text="Telefono" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+    <TextField fx:id="txtPhone" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+
+    <Label text="E-mail" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+    <TextField fx:id="txtE_mail" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+
+    <Label text="Nombre" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+    <TextField fx:id="txtName" GridPane.rowIndex="3" GridPane.columnIndex="0"/>
+
+    <Label text="Apellido" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+    <TextField fx:id="txtLast" GridPane.rowIndex="3" GridPane.columnIndex="1"/>
+
+    <Label text="Direccion" GridPane.rowIndex="4" GridPane.columnIndex="0"/>
+    <TextField fx:id="txtAdrress" GridPane.rowIndex="5" GridPane.columnIndex="0"/>
+
+    <Label text="Codigo Postal" GridPane.rowIndex="4" GridPane.columnIndex="1"/>
+    <TextField fx:id="txtCP" GridPane.rowIndex="5" GridPane.columnIndex="1"/>
+
+    <Label text="Ciudad" GridPane.rowIndex="6" GridPane.columnIndex="0"/>
+    <TextField fx:id="txtCity" GridPane.rowIndex="7" GridPane.columnIndex="0"/>
+
+    <Label text="Estado" GridPane.rowIndex="6" GridPane.columnIndex="1"/>
+    <TextField fx:id="txtState" GridPane.rowIndex="7" GridPane.columnIndex="1"/>
+
+    <Button fx:id="btnBuscar" text="Buscar" GridPane.columnIndex="8" GridPane.rowIndex="0"/>
+    <Button fx:id="btnAgregar" text="Agregar" GridPane.columnIndex="8" GridPane.rowIndex="1"/>
+
+</GridPane>

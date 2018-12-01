@@ -10,10 +10,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.TableView;
-import javafx.scene.control.TextInputDialog;
+import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.VBox;
@@ -21,6 +18,7 @@ import javafx.scene.paint.ImagePattern;
 import javafx.scene.shape.Circle;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
+import sample.Employee_View.Package.ControllerPackage;
 import sample.Employee_View.Shopping_Cart.ShoppingCart;
 import sample.models.clases.Employee;
 import sample.models.clases.Package;
@@ -33,6 +31,7 @@ import java.util.Optional;
 import java.util.ResourceBundle;
 
 public class EmployeeView implements Initializable {
+    static int count=0;
     ActionEvent controller;
     static double xOffset=0;
     static double yOffser=0;
@@ -40,6 +39,14 @@ public class EmployeeView implements Initializable {
     static Employee employee;
     private static ObservableList<Product> list_product= FXCollections.observableArrayList();
     private static ObservableList<Product> new_package=FXCollections.observableArrayList();
+
+    public static int getCount() {
+        return count;
+    }
+
+    public static void IngrementaCount() {
+        EmployeeView.count ++;
+    }
 
     @FXML
     JFXButton btnProduct,btnPackage,btnNewPackage,btnExit,btnCarrito,btnAgregaCarrito,btnAgregaCarrito1,btnNuevoPackage,btnAddPackage;
@@ -65,6 +72,14 @@ public class EmployeeView implements Initializable {
 
     public static void setList(ObservableList<Product> lit) {
         list_product = lit;
+    }
+
+    public static void limpiaNewPackage(){
+        new_package.clear();
+    }
+
+    public static void setListOneProduct(Product lit) {
+        list_product.add(lit);
     }
 
     public void setEmployee(Employee employee) {
@@ -190,7 +205,11 @@ public class EmployeeView implements Initializable {
             if(m_cuenta()<12){
                 m_CantidadPackage();
             }else{
-                System.out.println("debes agregar el paquete actual al carrito");
+                Alert alert=new Alert(Alert.AlertType.ERROR);
+                alert.setTitle("Error");
+                alert.setHeaderText(null);
+                alert.setContentText("Debes agregar el paquete actual al carrito");
+                alert.show();
             }
         }
     };
@@ -215,15 +234,56 @@ public class EmployeeView implements Initializable {
             int cantidad=Integer.parseInt(respuesta.get());
             product.setCantidad(cantidad);
             if(m_cuenta()+cantidad<=12){
-                System.out.println("Se agrego con exito");
                 new_package.add(product);
             }else{
-                System.out.println("no se puede agregar mas de 12 domas");
+                Alert alert=new Alert(Alert.AlertType.ERROR);
+                alert.setTitle("Error");
+                alert.setHeaderText(null);
+                alert.setContentText("No se puede agregar mas de 12 donas");
+                alert.show();
             }
         }catch (Exception e){
             System.out.println(e);
         }
     }
+
+    EventHandler<ActionEvent> eventShowPackage=new EventHandler<ActionEvent>() {
+        @Override
+        public void handle(ActionEvent event) {
+            try {
+                Stage windowPackage=new Stage();
+                windowPackage.setTitle("Package");
+                Parent root=null;
+                FXMLLoader loader= new FXMLLoader(getClass().getResource("Package/Package.fxml"));
+                ControllerPackage confi=new ControllerPackage();
+                confi.setList(new_package);
+                loader.setController(confi);
+                root=loader.load();
+                Scene scene=new Scene(root);
+                windowPackage.setScene(scene);
+
+                root.setOnMousePressed(new EventHandler<MouseEvent>() {
+                    @Override
+                    public void handle(MouseEvent event) {
+                        xOffset=event.getSceneX();
+                        yOffser=event.getSceneY();
+                    }
+                });
+
+                root.setOnMouseDragged(new EventHandler<MouseEvent>() {
+                    @Override
+                    public void handle(MouseEvent event) {
+                        windowPackage.setX(event.getScreenX()-xOffset);
+                        windowPackage.setY(event.getScreenY()-yOffser);
+                    }
+                });
+                windowPackage.initStyle(StageStyle.UNDECORATED);
+                windowPackage.show();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+    };
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -247,5 +307,6 @@ public class EmployeeView implements Initializable {
         btnCarrito.setOnAction(event_Carrito);
         btnExit.setOnAction(event_Close);
         btnAddPackage.setOnAction(event_AddPackage);
+        btnNuevoPackage.setOnAction(eventShowPackage);
     }
 }

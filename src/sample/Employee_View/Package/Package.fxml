@@ -6,7 +6,7 @@
 <?import javafx.scene.layout.*?>
 <GridPane xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" prefHeight="400" prefWidth="650.0" hgap="20">
 
-    <TableView fx:id="table_venta" GridPane.rowIndex="0" GridPane.columnIndex="0" prefHeight="400" maxHeight="600">
+    <TableView fx:id="table_package" GridPane.rowIndex="0" GridPane.columnIndex="0" prefHeight="400" maxHeight="600">
         <columns>
             <TableColumn text="Cantidad" prefWidth="100" style="-fx-alignment: center">
                 <cellValueFactory>
@@ -38,7 +38,7 @@
 
         <JFXButton fx:id="btnBorrar" text="Borrar" prefWidth="100" GridPane.rowIndex="2" GridPane.columnIndex="0" GridPane.columnSpan="2" GridPane.halignment="CENTER"/>
         <JFXButton fx:id="btnActualiza" text="Actualiza" prefWidth="100" GridPane.rowIndex="3" GridPane.columnIndex="0" GridPane.columnSpan="2" GridPane.halignment="CENTER"/>
-        <JFXButton fx:id="btnAgregaCarrito" text="Agregar al carrito" prefWidth="100" GridPane.rowIndex="4" GridPane.columnIndex="0" GridPane.columnSpan="2" GridPane.halignment="CENTER"/>
+        <JFXButton fx:id="btnAgregaCarrito" text="Agregar al carrito" prefWidth="180" GridPane.rowIndex="4" GridPane.columnIndex="0" GridPane.columnSpan="2" GridPane.halignment="CENTER"/>
         <JFXButton fx:id="btnCerrar" text="Cerrar" prefWidth="100" GridPane.rowIndex="5" GridPane.columnIndex="0" GridPane.columnSpan="2" GridPane.halignment="CENTER"/>
     </GridPane>
 
