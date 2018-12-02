@@ -74,6 +74,7 @@ public class ControllerPackage implements Initializable {
     EventHandler<ActionEvent> eventBorrar=new EventHandler<ActionEvent>() {
         @Override
         public void handle(ActionEvent event) {
+            txtCantidad.setText("");
             Product product=table_package.getSelectionModel().getSelectedItem();
             list.remove(product);
             m_calcTotal();
@@ -104,7 +105,7 @@ public class ControllerPackage implements Initializable {
             lbTotal.setText("");
             list.clear();
             table_package.refresh();
-            EmployeeView.limpiaNewPackage();
+            EmployeeView.clearNewPackage();
             ((Stage)((Button) event.getSource()).getScene().getWindow()).close();
         }
     };

@@ -2,6 +2,7 @@ package sample.models.dao;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import sample.models.clases.Customer;
 import sample.models.clases.Employee;
 import sample.models.clases.Package;
 import sample.models.clases.Product;
@@ -109,5 +110,100 @@ public class Dao {
             System.out.println("Error al recuperar información...");
         }
         return e;
+    }
+
+    public sample.models.clases.Customer fetchCustomer(String phone) {
+        ResultSet rs = null;
+        sample.models.clases.Customer e = null;
+        try {
+            String query = "SELECT * FROM customer where phone='" + phone + "'";
+            Statement st = conn.createStatement();
+            rs = st.executeQuery(query);
+            if(rs.first()){
+                e = new sample.models.clases.Customer(
+                        rs.getInt("id_customer"),rs.getString("name_cu"),
+                        rs.getString("last_cu"),rs.getString("e_mail"),
+                        rs.getString("phone"),rs.getString("address"),
+                        rs.getString("city"),rs.getString("state"),
+                        rs.getString("cp")
+                );
+            }
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+            System.out.println("Error al recuperar información...");
+        }
+        return e;
+    }
+
+    public Boolean insertCustomer(sample.models.clases.Customer customer) {
+        try {
+            String query = "insert into customer "
+                    + " (name_cu, last_cu, e_mail, phone, address, city, state, cp)"
+                    + " values (?, ?, ?, ?, ?, ?, ?, ?)";
+            PreparedStatement st =  conn.prepareStatement(query);
+            st.setString(1, customer.getName_cu());
+            st.setString(2, customer.getLast_cu());
+            st.setString(3, customer.getE_mail());
+            st.setString(4, customer.getPhone());
+            st.setString(5, customer.getAddress());
+            st.setString(6,customer.getCity());
+            st.setString(7,customer.getState());
+            st.setString(8, customer.getCp());
+            st.execute();
+            return true;
+        } catch (Exception e) {
+            e.printStackTrace();
+            System.out.println(e.getMessage());
+        }
+
+        return false;
+    }
+
+    public Boolean insertInvoiceCliente(Employee employee, double subtotal, double total,int payment, int customer) {
+        try {
+            String query = "insert into invoice "
+                    + " (subtotal, total, id_customer, id_payment, id_employee)"
+                    + " values (?, ?, ?, ?, ?)";
+            PreparedStatement st =  conn.prepareStatement(query);
+            st.setDouble(1, subtotal);
+            st.setDouble(2, total);
+            st.setInt(3, customer);
+            st.setInt(4, payment);
+            st.setInt(5, employee.getId_employee());
+            st.execute();
+            return true;
+        } catch (Exception e) {
+            e.printStackTrace();
+            System.out.println(e.getMessage());
+        }
+
+        return false;
+    }
+
+    public ObservableList<sample.models.clases.Customer> findAllCustomer() {
+        ObservableList<sample.models.clases.Customer> customers = FXCollections.observableArrayList();
+        try {
+            String query = "SELECT * FROM customer";
+            Statement st = conn.createStatement();
+            ResultSet rs = st.executeQuery(query);
+            sample.models.clases.Customer p = null;
+            while(rs.next()) {
+                p = new Customer(
+                        rs.getInt("id_customer"),rs.getString("name_cu"),
+                        rs.getString("last_cu"),rs.getString("e_mail"),
+                        rs.getString("phone"),rs.getString("address"),
+                        rs.getString("city"),rs.getString("state"),
+                        rs.getString("cp")
+                );
+                customers.add(p);
+            }
+            rs.close();
+            st.close();
+
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+            System.out.println("Error al recuperar información...");
+        }
+        return customers;
     }
 }

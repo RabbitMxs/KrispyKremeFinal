@@ -1,33 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import com.jfoenix.controls.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
-<GridPane xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" prefHeight="400.0" prefWidth="600.0">
-    <Label text="Telefono" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
-    <TextField fx:id="txtPhone" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+<GridPane alignment="CENTER" hgap="40" prefHeight="500.0" prefWidth="450.0" vgap="20" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1">
+    <Label text="Telefono" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+    <JFXTextField fx:id="txtPhone" GridPane.columnIndex="0" GridPane.rowIndex="1" />
 
-    <Label text="E-mail" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
-    <TextField fx:id="txtE_mail" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+    <Label text="E-mail" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+    <JFXTextField fx:id="txtE_mail" GridPane.columnIndex="1" GridPane.rowIndex="1" />
 
-    <Label text="Nombre" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
-    <TextField fx:id="txtName" GridPane.rowIndex="3" GridPane.columnIndex="0"/>
+    <Label text="Nombre" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+    <JFXTextField fx:id="txtName" GridPane.columnIndex="0" GridPane.rowIndex="3" />
 
-    <Label text="Apellido" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
-    <TextField fx:id="txtLast" GridPane.rowIndex="3" GridPane.columnIndex="1"/>
+    <Label text="Apellido" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+    <JFXTextField fx:id="txtLast" GridPane.columnIndex="1" GridPane.rowIndex="3" />
 
-    <Label text="Direccion" GridPane.rowIndex="4" GridPane.columnIndex="0"/>
-    <TextField fx:id="txtAdrress" GridPane.rowIndex="5" GridPane.columnIndex="0"/>
+    <Label text="Direccion" GridPane.columnIndex="0" GridPane.rowIndex="4" />
+    <JFXTextField fx:id="txtAdrress" GridPane.columnIndex="0" GridPane.rowIndex="5" />
 
-    <Label text="Codigo Postal" GridPane.rowIndex="4" GridPane.columnIndex="1"/>
-    <TextField fx:id="txtCP" GridPane.rowIndex="5" GridPane.columnIndex="1"/>
+    <Label text="Codigo Postal" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+    <JFXTextField fx:id="txtCP" GridPane.columnIndex="1" GridPane.rowIndex="5" />
 
-    <Label text="Ciudad" GridPane.rowIndex="6" GridPane.columnIndex="0"/>
-    <TextField fx:id="txtCity" GridPane.rowIndex="7" GridPane.columnIndex="0"/>
+    <Label text="Ciudad" GridPane.columnIndex="0" GridPane.rowIndex="6" />
+    <JFXTextField fx:id="txtCity" GridPane.columnIndex="0" GridPane.rowIndex="7" />
 
-    <Label text="Estado" GridPane.rowIndex="6" GridPane.columnIndex="1"/>
-    <TextField fx:id="txtState" GridPane.rowIndex="7" GridPane.columnIndex="1"/>
+    <Label text="Estado" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+    <JFXTextField fx:id="txtState" GridPane.columnIndex="1" GridPane.rowIndex="7" />
 
-    <Button fx:id="btnBuscar" text="Buscar" GridPane.columnIndex="8" GridPane.rowIndex="0"/>
-    <Button fx:id="btnAgregar" text="Agregar" GridPane.columnIndex="8" GridPane.rowIndex="1"/>
+    <JFXButton fx:id="btnBuscar" text="Buscar"  GridPane.columnIndex="0" GridPane.rowIndex="8" prefWidth="175"/>
+    <JFXButton fx:id="btnAgregar" text="Agregar"  GridPane.columnIndex="1" GridPane.rowIndex="8" prefWidth="175"/>
 
+    <JFXButton fx:id="btnConfirmar" text="Confirmar Venta"  GridPane.columnIndex="0" GridPane.rowIndex="9" GridPane.columnSpan="2" maxWidth="Infinity" textAlignment="CENTER"/>
+
+    <JFXButton fx:id="btnCerrar" text="Cancelar"  GridPane.columnIndex="0" GridPane.rowIndex="10" GridPane.columnSpan="2" maxWidth="Infinity" textAlignment="CENTER"/>
 </GridPane>

@@ -1,15 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="Creacion de invoice lista y creacion del nuevo paquete esta en proceso">
-      <change afterPath="$PROJECT_DIR$/src/sample/Employee_View/Package/ControllerPackage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/sample/Employee_View/Shopping_Cart/Customer/ControllerCustomer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/sample/Employee_View/Shopping_Cart/Customer/Customer.fxml" afterDir="false" />
+    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="nuevo paquete listo, falta la parte los clientes">
+      <change afterPath="$PROJECT_DIR$/src/Styles/StyleWindows.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Donas/sample/Employee_View/EmployeeView.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Donas/sample/Employee_View/EmployeeView.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Donas/sample/sample.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Donas/sample/sample.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/sample/Employee_View/EmployeeView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/Employee_View/EmployeeView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sample/Employee_View/Package/Package.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/Employee_View/Package/Package.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sample/Employee_View/Package/ControllerPackage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/Employee_View/Package/ControllerPackage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sample/Employee_View/Shopping_Cart/Customer/ControllerCustomer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/Employee_View/Shopping_Cart/Customer/ControllerCustomer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sample/Employee_View/Shopping_Cart/Customer/Customer.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/Employee_View/Shopping_Cart/Customer/Customer.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sample/Employee_View/Shopping_Cart/ShoppingCart.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/Employee_View/Shopping_Cart/ShoppingCart.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sample/models/clases/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/models/clases/Customer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sample/models/dao/Dao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/models/dao/Dao.java" afterDir="false" />
     </list>
     <ignored path="JavaFxApplication.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -79,7 +81,7 @@
     <session id="1104617566">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="39" />
+          <entry key="project.closed" value="41" />
           <entry key="project.open.time.1" value="3" />
           <entry key="project.open.time.10" value="1" />
           <entry key="project.open.time.111" value="1" />
@@ -97,7 +99,7 @@
           <entry key="project.open.time.4" value="1" />
           <entry key="project.open.time.48" value="3" />
           <entry key="project.open.time.49" value="2" />
-          <entry key="project.open.time.50" value="1" />
+          <entry key="project.open.time.50" value="3" />
           <entry key="project.open.time.51" value="1" />
           <entry key="project.open.time.53" value="2" />
           <entry key="project.open.time.54" value="2" />
@@ -109,38 +111,38 @@
           <entry key="project.open.time.66" value="2" />
           <entry key="project.open.time.67" value="1" />
           <entry key="project.open.time.9" value="1" />
-          <entry key="project.opened" value="40" />
+          <entry key="project.opened" value="42" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="css" value="1621" />
+          <entry key="css" value="1646" />
           <entry key="dummy" value="1" />
-          <entry key="fxml" value="3116" />
-          <entry key="java" value="6554" />
-          <entry key="txt" value="223" />
+          <entry key="fxml" value="3260" />
+          <entry key="java" value="8138" />
+          <entry key="txt" value="280" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="CSS" value="1621" />
-          <entry key="JAVA" value="6554" />
-          <entry key="PLAIN_TEXT" value="224" />
-          <entry key="XML" value="3116" />
+          <entry key="CSS" value="1646" />
+          <entry key="JAVA" value="8138" />
+          <entry key="PLAIN_TEXT" value="281" />
+          <entry key="XML" value="3260" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="css" value="7" />
-          <entry key="fxml" value="41" />
-          <entry key="java" value="102" />
+          <entry key="css" value="10" />
+          <entry key="fxml" value="47" />
+          <entry key="java" value="120" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="CSS" value="7" />
-          <entry key="JAVA" value="102" />
-          <entry key="XML" value="41" />
+          <entry key="CSS" value="10" />
+          <entry key="JAVA" value="120" />
+          <entry key="XML" value="47" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.spring.boot.run.usages" />
@@ -155,39 +157,55 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/sample/Main.java">
+        <entry file="file://$PROJECT_DIR$/src/sample/Employee_View/Shopping_Cart/ShoppingCart.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="92">
-              <caret line="8" column="39" selection-start-line="8" selection-start-column="39" selection-end-line="8" selection-end-column="39" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/sample/Employee_View/EmployeeView.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-394">
-              <caret line="236" column="41" lean-forward="true" selection-start-line="236" selection-start-column="41" selection-end-line="236" selection-end-column="41" />
+            <state relative-caret-position="1840">
+              <caret line="108" column="8" selection-start-line="108" selection-start-column="8" selection-end-line="108" selection-end-column="75" />
               <folding>
-                <element signature="e#1547#1548#0" expanded="true" />
-                <element signature="e#1575#1576#0" expanded="true" />
-                <element signature="method#Cantidad#0;class#EmployeeView#0" />
-                <element signature="class#5056:6586" />
-                <element signature="method#m_cuenta#0;class#EmployeeView#0" />
-                <element signature="class#8521:10011" />
+                <element signature="imports" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/sample/Employee_View/Shopping_Cart/ShoppingCart.java">
+        <entry file="file://$PROJECT_DIR$/src/sample/Employee_View/Shopping_Cart/Customer/ControllerCustomer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="294">
-              <caret line="122" column="40" lean-forward="true" selection-start-line="122" selection-start-column="40" selection-end-line="122" selection-end-column="40" />
+            <state relative-caret-position="23">
+              <caret line="85" column="51" selection-start-line="85" selection-start-column="51" selection-end-line="85" selection-end-column="51" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="method#payment#0;class#ShoppingCart#0" />
+                <element signature="method#ControllerCustomer#0;class#ControllerCustomer#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/Styles/StyleWindows.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="253">
+              <caret line="11" column="12" selection-start-line="11" selection-start-column="12" selection-end-line="11" selection-end-column="12" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Styles/StyleLogin.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="621">
+              <caret line="27" column="1" lean-forward="true" selection-start-line="27" selection-start-column="1" selection-end-line="27" selection-end-column="1" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/sample/models/dao/Dao.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="3956">
+              <caret line="182" column="72" selection-start-line="182" selection-start-column="72" selection-end-line="182" selection-end-column="72" />
+              <folding>
+                <element signature="imports" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -197,29 +215,8 @@
         <entry file="file://$PROJECT_DIR$/src/sample/Employee_View/Shopping_Cart/Customer/Customer.fxml">
           <provider editor-type-id="JavaFX-Scene-Builder" />
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="644">
-              <caret line="34" column="91" selection-start-line="34" selection-start-column="91" selection-end-line="34" selection-end-column="91" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/sample/Employee_View/Shopping_Cart/Customer/ControllerCustomer.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="46">
-              <caret line="2" column="31" selection-start-line="2" selection-start-column="31" selection-end-line="2" selection-end-column="31" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/sample/models/dao/Dao.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="77" column="33" lean-forward="true" selection-start-line="77" selection-start-column="33" selection-end-line="77" selection-end-column="33" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="161">
+              <caret line="7" column="53" selection-start-line="7" selection-start-column="53" selection-end-line="7" selection-end-column="53" />
             </state>
           </provider>
         </entry>
@@ -229,9 +226,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="CSS File" />
         <option value="FxmlFile" />
         <option value="Class" />
+        <option value="CSS File" />
       </list>
     </option>
   </component>
@@ -251,7 +248,6 @@
       <list>
         <option value="$PROJECT_DIR$/src/sample/Style.css" />
         <option value="$PROJECT_DIR$/src/sample/Styles/StyleLogin.css" />
-        <option value="$PROJECT_DIR$/src/Styles/StyleLogin.css" />
         <option value="$PROJECT_DIR$/src/sample/models/Category.java" />
         <option value="$PROJECT_DIR$/src/sample/models/Details_invoice_package.java" />
         <option value="$PROJECT_DIR$/src/sample/models/Details_invoice_product.java" />
@@ -266,18 +262,22 @@
         <option value="$PROJECT_DIR$/src/sample/Employee_View/Confirmation/confirmation.fxml" />
         <option value="$PROJECT_DIR$/src/sample/sample.fxml" />
         <option value="$PROJECT_DIR$/src/sample/Main.java" />
-        <option value="$PROJECT_DIR$/src/sample/models/dao/Dao.java" />
         <option value="$PROJECT_DIR$/src/Styles/StyleEmployee.css" />
         <option value="$PROJECT_DIR$/src/sample/Controller.java" />
         <option value="$PROJECT_DIR$/src/sample/Employee_View/Employee_View.fxml" />
         <option value="$PROJECT_DIR$/src/sample/Employee_View/Shopping_Cart/Shopping_Cart.fxml" />
-        <option value="$PROJECT_DIR$/src/sample/Employee_View/Shopping_Cart/ShoppingCart.java" />
         <option value="$PROJECT_DIR$/src/sample/Employee_View/Package/Package.fxml" />
         <option value="$PROJECT_DIR$/src/sample/models/clases/Product.java" />
-        <option value="$PROJECT_DIR$/src/sample/Employee_View/Package/ControllerPackage.java" />
-        <option value="$PROJECT_DIR$/src/sample/Employee_View/EmployeeView.java" />
         <option value="$PROJECT_DIR$/src/sample/Employee_View/Shopping_Cart/Customer.fxml" />
         <option value="$PROJECT_DIR$/src/sample/Employee_View/Shopping_Cart/Customer/Customer.fxml" />
+        <option value="$PROJECT_DIR$/src/sample/Employee_View/EmployeeView.java" />
+        <option value="$PROJECT_DIR$/src/sample/Employee_View/Package/ControllerPackage.java" />
+        <option value="$PROJECT_DIR$/src/sample/models/clases/Customer.java" />
+        <option value="$PROJECT_DIR$/src/sample/Employee_View/Shopping_Cart/ShoppingCart.java" />
+        <option value="$PROJECT_DIR$/src/sample/models/dao/Dao.java" />
+        <option value="$PROJECT_DIR$/src/sample/Employee_View/Shopping_Cart/Customer/ControllerCustomer.java" />
+        <option value="$PROJECT_DIR$/src/Styles/StyleLogin.css" />
+        <option value="$PROJECT_DIR$/src/Styles/StyleWindows.css" />
       </list>
     </option>
   </component>
@@ -309,7 +309,6 @@
     </navigator>
     <panes>
       <pane id="PackagesPane" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -362,6 +361,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -374,7 +374,7 @@
     <property name="OverrideImplement.combined" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1543695091972" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1543732585773" />
     <property name="dynamic.classpath" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../Practica2_Competencia2" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
@@ -532,7 +532,9 @@
       <workItem from="1543520180909" duration="8889000" />
       <workItem from="1543531013358" duration="5000" />
       <workItem from="1543554295157" duration="4497000" />
-      <workItem from="1543680186725" duration="9858000" />
+      <workItem from="1543680186725" duration="12674000" />
+      <workItem from="1543706475228" duration="8095000" />
+      <workItem from="1543726677826" duration="2220000" />
     </task>
     <task id="LOCAL-00001" summary="Vista Empleado-Producto Lista">
       <created>1542926207130</created>
@@ -597,17 +599,24 @@
       <option name="project" value="LOCAL" />
       <updated>1543558739473</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="nuevo paquete listo, falta la parte los clientes">
+      <created>1543695171627</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1543695171627</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="125108000" />
+    <option name="totallyTimeSpent" value="138239000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.6703755" visible="true" weight="0.24622357" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.6703755" visible="true" weight="0.24546827" />
       <window_info id="Structure" order="1" weight="0.25" />
       <window_info id="Favorites" order="2" weight="0.32930514" />
       <window_info id="Designer" order="3" />
@@ -617,7 +626,7 @@
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.3110749" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.5325733" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.52443" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -641,6 +650,41 @@
       <window_info anchor="right" id="Palette&#9;" order="8" />
       <window_info anchor="right" id="Theme Preview" order="9" />
     </layout>
+    <layout-to-restore>
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.6703755" visible="true" weight="0.24546827" />
+      <window_info id="Structure" order="1" weight="0.25" />
+      <window_info id="Favorites" order="2" weight="0.32930514" />
+      <window_info id="Designer" order="3" />
+      <window_info id="Image Layers" order="4" />
+      <window_info id="UI Designer" order="5" />
+      <window_info id="Capture Tool" order="6" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.3110749" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.52443" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Application Servers" order="7" />
+      <window_info anchor="bottom" id="Version Control" order="8" weight="0.32899022" />
+      <window_info anchor="bottom" id="Problems" order="9" />
+      <window_info anchor="bottom" id="Changes" order="10" />
+      <window_info anchor="bottom" id="Profiler" order="11" />
+      <window_info anchor="bottom" id="Event Log" order="12" weight="0.32899022" />
+      <window_info anchor="bottom" id="Messages" order="13" weight="0.32899022" />
+      <window_info anchor="bottom" id="Database Changes" order="14" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Terminal" order="15" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="JetGradle" order="3" />
+      <window_info anchor="right" id="Database" order="4" weight="0.32930514" />
+      <window_info anchor="right" id="Palette" order="5" />
+      <window_info anchor="right" id="Maven Projects" order="6" weight="0.32930514" />
+      <window_info anchor="right" id="Capture Analysis" order="7" />
+      <window_info anchor="right" id="Palette&#9;" order="8" />
+      <window_info anchor="right" id="Theme Preview" order="9" />
+    </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
@@ -658,7 +702,8 @@
     <MESSAGE value="un solo dao" />
     <MESSAGE value="Vista Carrito" />
     <MESSAGE value="Creacion de invoice lista y creacion del nuevo paquete esta en proceso" />
-    <option name="LAST_COMMIT_MESSAGE" value="Creacion de invoice lista y creacion del nuevo paquete esta en proceso" />
+    <MESSAGE value="nuevo paquete listo, falta la parte los clientes" />
+    <option name="LAST_COMMIT_MESSAGE" value="nuevo paquete listo, falta la parte los clientes" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="antWorkspaceConfiguration">
@@ -677,20 +722,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="190">
           <caret line="109" column="13" selection-start-line="109" selection-start-column="13" selection-end-line="109" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Styles/StyleLogin.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="253">
-          <caret line="11" column="29" selection-start-line="11" selection-start-column="22" selection-end-line="11" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/models/clases/Customer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="46">
-          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
         </state>
       </provider>
     </entry>
@@ -775,31 +806,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/models/dao/PackageDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="227">
-          <caret line="74" column="54" lean-forward="true" selection-start-line="74" selection-start-column="54" selection-end-line="74" selection-end-column="54" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Styles/StyleEmployee.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="273">
-          <caret line="53" lean-forward="true" selection-start-line="53" selection-end-line="53" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/Controller.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="227">
-          <caret line="56" column="66" selection-start-line="56" selection-start-column="66" selection-end-line="56" selection-end-column="66" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#showEmpleado#0;class#Controller#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/sample/Employee_View/Employee_View.fxml">
       <provider editor-type-id="JavaFX-Scene-Builder" />
       <provider selected="true" editor-type-id="text-editor">
@@ -818,18 +824,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="101">
           <caret line="158" selection-start-line="158" selection-end-line="158" />
-          <folding>
-            <element signature="e#221360#221361#0" expanded="true" />
-            <element signature="e#221418#221419#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/Employee_View/Shopping_Cart/Shopping_Cart.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder" />
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="46">
-          <caret line="2" selection-start-line="2" selection-end-line="2" />
         </state>
       </provider>
     </entry>
@@ -854,14 +848,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/Employee_View/Package/Package.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder" />
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="35" selection-start-line="8" selection-start-column="35" selection-end-line="8" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/sample/models/clases/Product.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="250">
@@ -876,52 +862,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/Employee_View/Package/ControllerPackage.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="349">
-          <caret line="107" column="81" selection-start-line="107" selection-start-column="81" selection-end-line="107" selection-end-column="81" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="class#668:930" />
-            <element signature="class#1555:2234" />
-            <element signature="class#2283:2640" />
-            <element signature="class#2688:2881" />
-            <element signature="e#2904#2905#0" expanded="true" />
-            <element signature="e#2996#2997#0" expanded="true" />
-            <element signature="method#Cantidad#0;class#ControllerPackage#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/models/dao/Dao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="77" column="33" lean-forward="true" selection-start-line="77" selection-start-column="33" selection-end-line="77" selection-end-column="33" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/Employee_View/Shopping_Cart/Customer.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder" />
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="230">
-          <caret line="10" column="70" selection-start-line="10" selection-start-column="27" selection-end-line="10" selection-end-column="70" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/Employee_View/Shopping_Cart/ShoppingCart.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="294">
-          <caret line="122" column="40" lean-forward="true" selection-start-line="122" selection-start-column="40" selection-end-line="122" selection-end-column="40" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#payment#0;class#ShoppingCart#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sample/Employee_View/Shopping_Cart/Customer.fxml" />
     <entry file="file://$PROJECT_DIR$/src/sample/Main.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="92">
@@ -929,17 +870,87 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/sample/Controller.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="271">
+          <caret line="75" column="81" lean-forward="true" selection-start-line="75" selection-start-column="12" selection-end-line="75" selection-end-column="81" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sample/Employee_View/Shopping_Cart/Shopping_Cart.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-506">
+          <caret line="2" selection-start-line="2" selection-end-line="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Styles/StyleEmployee.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1150">
+          <caret line="53" lean-forward="true" selection-start-line="53" selection-end-line="53" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sample/Employee_View/Package/ControllerPackage.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="404">
+          <caret line="106" column="36" lean-forward="true" selection-start-line="106" selection-start-column="36" selection-end-line="106" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/sample/Employee_View/EmployeeView.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-394">
-          <caret line="236" column="41" lean-forward="true" selection-start-line="236" selection-start-column="41" selection-end-line="236" selection-end-column="41" />
+        <state relative-caret-position="234">
+          <caret line="76" column="28" selection-start-line="76" selection-start-column="28" selection-end-line="76" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sample/models/dao/PackageDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="89">
+          <caret line="104" column="64" lean-forward="true" selection-start-line="104" selection-start-column="64" selection-end-line="104" selection-end-column="64" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sample/models/clases/Customer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="161">
+          <caret line="7" column="136" selection-start-line="7" selection-start-column="136" selection-end-line="7" selection-end-column="136" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sample/Employee_View/Package/Package.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" column="35" selection-start-line="8" selection-start-column="35" selection-end-line="8" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_111/javafx-src.zip!/javafx/stage/Window.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="104">
+          <caret line="102" selection-start-line="102" selection-end-line="102" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sample/Employee_View/Shopping_Cart/ShoppingCart.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1840">
+          <caret line="108" column="8" selection-start-line="108" selection-start-column="8" selection-end-line="108" selection-end-column="75" />
           <folding>
-            <element signature="e#1547#1548#0" expanded="true" />
-            <element signature="e#1575#1576#0" expanded="true" />
-            <element signature="method#Cantidad#0;class#EmployeeView#0" />
-            <element signature="class#5056:6586" />
-            <element signature="method#m_cuenta#0;class#EmployeeView#0" />
-            <element signature="class#8521:10011" />
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sample/models/dao/Dao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3956">
+          <caret line="182" column="72" selection-start-line="182" selection-start-column="72" selection-end-line="182" selection-end-column="72" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -947,15 +958,33 @@
     <entry file="file://$PROJECT_DIR$/src/sample/Employee_View/Shopping_Cart/Customer/Customer.fxml">
       <provider editor-type-id="JavaFX-Scene-Builder" />
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="644">
-          <caret line="34" column="91" selection-start-line="34" selection-start-column="91" selection-end-line="34" selection-end-column="91" />
+        <state relative-caret-position="161">
+          <caret line="7" column="53" selection-start-line="7" selection-start-column="53" selection-end-line="7" selection-end-column="53" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/sample/Employee_View/Shopping_Cart/Customer/ControllerCustomer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="46">
-          <caret line="2" column="31" selection-start-line="2" selection-start-column="31" selection-end-line="2" selection-end-column="31" />
+        <state relative-caret-position="23">
+          <caret line="85" column="51" selection-start-line="85" selection-start-column="51" selection-end-line="85" selection-end-column="51" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#ControllerCustomer#0;class#ControllerCustomer#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Styles/StyleLogin.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="621">
+          <caret line="27" column="1" lean-forward="true" selection-start-line="27" selection-start-column="1" selection-end-line="27" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Styles/StyleWindows.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="253">
+          <caret line="11" column="12" selection-start-line="11" selection-start-column="12" selection-end-line="11" selection-end-column="12" />
         </state>
       </provider>
     </entry>

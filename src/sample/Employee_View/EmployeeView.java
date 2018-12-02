@@ -74,8 +74,12 @@ public class EmployeeView implements Initializable {
         list_product = lit;
     }
 
-    public static void limpiaNewPackage(){
+    public static void clearNewPackage(){
         new_package.clear();
+    }
+
+    public  static void clearListProduct(){
+        list_product.clear();
     }
 
     public static void setListOneProduct(Product lit) {
@@ -141,7 +145,7 @@ public class EmployeeView implements Initializable {
             TextInputDialog inputDialog=new TextInputDialog();
             inputDialog.setTitle("Cantidad");
             inputDialog.setHeaderText(null);
-            inputDialog.setContentText("Teclea la cantidad de "+product.getName_pro());
+            inputDialog.setContentText("Teclea la cantidad de donas "+product.getName_pro()+" que quieres agregar al carrito.");
             inputDialog.initStyle(StageStyle.UTILITY);
             Optional<String> respuesta=inputDialog.showAndWait();
             return Integer.parseInt(respuesta.get());
@@ -208,7 +212,7 @@ public class EmployeeView implements Initializable {
                 Alert alert=new Alert(Alert.AlertType.ERROR);
                 alert.setTitle("Error");
                 alert.setHeaderText(null);
-                alert.setContentText("Debes agregar el paquete actual al carrito");
+                alert.setContentText("Debes agregar el paquete actual al carrito.");
                 alert.show();
             }
         }
@@ -239,7 +243,7 @@ public class EmployeeView implements Initializable {
                 Alert alert=new Alert(Alert.AlertType.ERROR);
                 alert.setTitle("Error");
                 alert.setHeaderText(null);
-                alert.setContentText("No se puede agregar mas de 12 donas");
+                alert.setContentText("No se puede agregar mas de 12 donas.");
                 alert.show();
             }
         }catch (Exception e){

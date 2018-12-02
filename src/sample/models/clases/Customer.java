@@ -5,6 +5,17 @@ public class Customer {
     int id_customer;
     String name_cu,last_cu, e_mail,phone,address,city,state,cp;
 
+    public Customer(String name_cu, String last_cu, String e_mail, String phone, String address, String city, String state, String cp) {
+        this.name_cu = name_cu;
+        this.last_cu = last_cu;
+        this.e_mail = e_mail;
+        this.phone = phone;
+        this.address = address;
+        this.city = city;
+        this.state = state;
+        this.cp = cp;
+    }
+
     public Customer(int id_customer, String name_cu, String last_cu, String e_mail, String phone, String address, String city, String state, String cp) {
         this.id_customer = id_customer;
         this.name_cu = name_cu;
