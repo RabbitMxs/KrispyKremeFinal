@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.text.*?>
+<AnchorPane prefHeight="700.0" prefWidth="1370.0" style="-fx-background-color: #0d885e;" stylesheets="@../../../Styles/admin.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.admin.Empleados.ControllerEmpleados">
+   <children>
+      <Pane prefHeight="700.0" prefWidth="624.0" style="-fx-background-color: #016d48;">
+         <children>
+            <Circle fx:id="image" fill="DODGERBLUE" layoutX="219.0" layoutY="77.0" radius="63.0" stroke="BLACK" strokeType="INSIDE" />
+            <Label layoutX="92.0" layoutY="140.0" text="Registro de Empleados" textFill="WHITE">
+               <font>
+                  <Font size="25.0" />
+               </font>
+            </Label>
+            <Label layoutX="5.0" layoutY="447.0" text="Apellidos" textFill="WHITE">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </Label>
+            <Label layoutX="3.0" layoutY="307.0" text="Nombre" textFill="WHITE">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </Label>
+            <Label layoutX="7.0" layoutY="193.0" text="Id del Empleado" textFill="WHITE">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </Label>
+            <Label layoutX="333.0" layoutY="306.0" text="Contraseña" textFill="WHITE">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </Label>
+            <Label layoutX="338.0" layoutY="192.0" prefHeight="26.0" prefWidth="62.0" text="Usuario" textFill="WHITE">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </Label>
+            <Label layoutX="338.0" layoutY="446.0" prefHeight="26.0" prefWidth="108.0" text="Permisos" textFill="WHITE">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </Label>
+            <JFXButton fx:id="BtnAgregar" layoutX="24.0" layoutY="587.0" onAction="#Guardar" prefHeight="47.0" prefWidth="127.0" style="-fx-background-color: #0d885e;" text="Agregar" textFill="WHITE" />
+            <JFXButton fx:id="BtnActualizar" layoutX="250.0" layoutY="587.0" onAction="#ActualizarRegistro" prefHeight="47.0" prefWidth="127.0" style="-fx-background-color: #0d885e;" text="Actualizar" textFill="WHITE" />
+            <JFXButton fx:id="BtnEliminar" layoutX="465.0" layoutY="587.0" onAction="#Eliminar" prefHeight="47.0" prefWidth="127.0" style="-fx-background-color: #0d885e;" text="Eliminar" textFill="WHITE" />
+            <TextField fx:id="TxtContraseña" layoutX="333.0" layoutY="365.0" prefHeight="36.0" prefWidth="191.0" style="-fx-background-color: #99cc99;">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="TxtUsuario" layoutX="326.0" layoutY="235.0" prefHeight="36.0" prefWidth="191.0" style="-fx-background-color: #99cc99;">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="TxtId" layoutX="13.0" layoutY="236.0" prefHeight="36.0" prefWidth="191.0" style="-fx-background-color: #99cc99;">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="TxtNombre" layoutX="13.0" layoutY="366.0" prefHeight="36.0" prefWidth="191.0" style="-fx-background-color: #99cc99;">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="TxtApellidos" layoutX="13.0" layoutY="505.0" prefHeight="36.0" prefWidth="191.0" style="-fx-background-color: #99cc99;">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </TextField>
+            <ComboBox fx:id="CbxPermisos" layoutX="333.0" layoutY="505.0" prefHeight="36.0" prefWidth="191.0" style="-fx-background-color: #99cc99;" />
+         </children>
+      </Pane>
+      <TableView fx:id="TvEmployee" layoutX="624.0" prefHeight="700.0" prefWidth="745.0">
+        <columns>
+          <TableColumn fx:id="ClId" prefWidth="75.0" text="ID" />
+          <TableColumn fx:id="ClNombre" prefWidth="110.0" text="Nombre" />
+            <TableColumn fx:id="ClApellidos" prefWidth="166.0" text="Apellidos" />
+            <TableColumn fx:id="ClUsuario" prefWidth="139.0" text="Usuario" />
+            <TableColumn fx:id="ClContraseña" prefWidth="128.0" text="Contraseña" />
+            <TableColumn fx:id="ClPermisos" prefWidth="123.0" text="Permisos" />
+        </columns>
+      </TableView>
+   </children>
+</AnchorPane>

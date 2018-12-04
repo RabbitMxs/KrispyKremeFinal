@@ -169,6 +169,7 @@ public class EmployeeView implements Initializable {
                 loader.setController(confi);
                 root=loader.load();
                 Scene scene=new Scene(root);
+                scene.getStylesheets().add("/Styles/StyleWindows.css");
                 confirmation.setScene(scene);
                 root.setOnMousePressed(new EventHandler<MouseEvent>() {
                     @Override
@@ -264,6 +265,7 @@ public class EmployeeView implements Initializable {
                 loader.setController(confi);
                 root=loader.load();
                 Scene scene=new Scene(root);
+                scene.getStylesheets().add("/Styles/StyleWindows.css");
                 windowPackage.setScene(scene);
 
                 root.setOnMousePressed(new EventHandler<MouseEvent>() {

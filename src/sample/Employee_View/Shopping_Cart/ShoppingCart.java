@@ -148,6 +148,7 @@ public class ShoppingCart implements Initializable {
                     e.printStackTrace();
                 }
                 Scene scene=new Scene(root);
+                scene.getStylesheets().add("/Styles/StyleWindows.css");
                 customer.setScene(scene);
                 root.setOnMousePressed(new EventHandler<MouseEvent>() {
                     @Override

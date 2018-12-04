@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.text.Font?>
+<AnchorPane prefHeight="700.0" prefWidth="1370.0" style="-fx-background-color: #0d885e;" stylesheets="@../../../Styles/admin.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.admin.Permisos.ControlllerPermisos">
+   <children>
+      <Pane prefHeight="700.0" prefWidth="442.0" style="-fx-background-color: #016d48;">
+         <children>
+            <Circle fx:id="image" fill="DODGERBLUE" layoutX="187.0" layoutY="104.0" radius="90.0" stroke="BLACK" strokeType="INSIDE" />
+            <Label layoutX="126.0" layoutY="396.0" text="Nombre de Permiso" textFill="WHITE">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </Label>
+            <Label layoutX="126.0" layoutY="248.0" text="Id Permiso" textFill="WHITE">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </Label>
+            <TextField fx:id="TxtNombre" layoutX="118.0" layoutY="466.0" onKeyTyped="#OnlyNums" prefHeight="36.0" prefWidth="191.0" style="-fx-background-color: #99cc99;">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="TxtId" layoutX="118.0" layoutY="322.0" prefHeight="36.0" prefWidth="191.0" style="-fx-background-color: #99cc99;">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </TextField>
+            <JFXButton fx:id="BtnElimiar" layoutX="295.0" layoutY="573.0" onAction="#Eliminar" prefHeight="47.0" prefWidth="127.0" style="-fx-background-color: #0d885e;" text="Eliminar" textFill="WHITE" />
+            <JFXButton fx:id="Btnactualizar" layoutX="155.0" layoutY="628.0" onAction="#ActualizarRegistro" prefHeight="47.0" prefWidth="127.0" style="-fx-background-color: #0d885e;" text="Actualizar" textFill="WHITE" />
+            <JFXButton fx:id="BtnAgregar" layoutX="14.0" layoutY="573.0" onAction="#Guardar" prefHeight="47.0" prefWidth="127.0" style="-fx-background-color: #0d885e;" text="Agregar" textFill="WHITE" />
+         </children>
+      </Pane>
+      <TableView fx:id="TbvPermit" layoutX="442.0" prefHeight="214.0" prefWidth="305.0">
+        <columns>
+          <TableColumn fx:id="ClId" prefWidth="93.0" text="Id" />
+          <TableColumn fx:id="ClNombre" prefWidth="208.0" text="Nombre de Permiso" />
+        </columns>
+      </TableView>
+   </children>
+</AnchorPane>

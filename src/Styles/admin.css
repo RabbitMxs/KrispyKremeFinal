@@ -1,0 +1,30 @@
+.table-view .column-header .label
+{
+    -fx-text-fill: White;
+    -fx-alignment: CENTER;
+    -fx-font-size: 20px;
+    -fx-background-color: #336666;
+}
+/* color de fondo para cuando el raton este sobre la celda*/
+.table-cell:hover {
+//-fx-background-color: #9900ff;
+}
+.table-row-cell
+{
+    -fx-background-color: #336666;
+}
+
+/*Diseño de la Celds del Tableview*/
+.table-cell
+{
+    -fx-font-size: 15px;
+    -fx-text-fill: white;
+}
+/*color de una fila cuando en raton se encuentra sobre una fila que esta seleccionada*/
+.table-view:row-selection .table-row-cell:filled:selected:hover {
+    -fx-background-color: #9900ff;
+}
+/* color de una fila seleccionada por el usuario*/
+.table-view:row-selection .table-row-cell:filled:selected {
+    -fx-background-color:#09396d;
+}

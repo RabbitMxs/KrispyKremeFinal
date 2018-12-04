@@ -44,7 +44,7 @@ public class Controller implements Initializable {
                 if(employee.getId_permit()==2){
                     showEmpleado(employee,event);
                 }else{
-                    //abrir vista de administrador
+                    showAdmin(employee,event);
                 }
             }else{
                 txtPassword.setText("");
@@ -53,6 +53,26 @@ public class Controller implements Initializable {
             }
         }
     };
+
+    public void showAdmin(Employee employee, ActionEvent event){
+        try {
+            txtPassword.setText("");
+            txtUser.setText("");
+            Stage Empleado_admin=new Stage();
+            Empleado_admin.setTitle("Admin");
+            Parent root=null;
+            FXMLLoader loader= new FXMLLoader(getClass().getResource("admin/productos.fxml"));
+            root=loader.load();
+            Scene scene=new Scene(root);
+            Empleado_admin.setScene(scene);
+            Empleado_admin.setMaximized(true);
+            Empleado_admin.setResizable(true);
+            Empleado_admin.show();
+            ((Stage)((Button) event.getSource()).getScene().getWindow()).close();//para ocultar la vista del main
+        }catch (IOException e){
+            e.printStackTrace();
+        }
+    }
 
     public void showEmpleado(Employee employee, ActionEvent event){
         try {
