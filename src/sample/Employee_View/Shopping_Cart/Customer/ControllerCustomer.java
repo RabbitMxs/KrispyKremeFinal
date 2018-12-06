@@ -12,10 +12,13 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.stage.Stage;
 import sample.Employee_View.EmployeeView;
+import sample.Employee_View.Shopping_Cart.Ticket;
 import sample.models.clases.Customer;
 import sample.models.clases.Employee;
 import sample.models.dao.Dao;
 
+import java.io.File;
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -30,6 +33,9 @@ public class ControllerCustomer implements Initializable {
 
     @FXML
     JFXButton btnBuscar,btnAgregar,btnConfirmar,btnCerrar;
+
+
+    public static final String DEST4 = "results/ticket.pdf";
 
     public ControllerCustomer(Employee employee, double total, double subtotal, int payment) {
         this.employee = employee;
@@ -111,11 +117,24 @@ public class ControllerCustomer implements Initializable {
         return true;
     }
 
+
     EventHandler<ActionEvent> event_Pagar=new EventHandler<ActionEvent>() {
         @Override
         public void handle(ActionEvent event) {
             Customer customer=dao.fetchCustomer(txtPhone.getText());
             if(dao.insertInvoiceCliente(employee,subtotal, total,payment, customer.getId_customer())){
+                try{
+                    File file = new File(DEST4);
+                    file.getParentFile().mkdirs();
+                    Ticket ticket=new Ticket(employee.getId_employee(),subtotal,total);
+                    ticket.createPdf(DEST4);
+                    Alert alert= new Alert(Alert.AlertType.INFORMATION);
+                    alert.setTitle("Ticket");
+                    alert.setHeaderText("Su ticket ha sido generado");
+                    alert.show();
+                }catch(IOException e ){
+                    System.out.println(e);
+                }
                 EmployeeView.clearListProduct();
                 EmployeeView.clearListProduct();
                 ((Stage)((Button) event.getSource()).getScene().getWindow()).close();

@@ -78,7 +78,7 @@ public class Product {
         this.cantidad = cantidad;
     }
 
-    @Override
+    /*@Override
     public String toString() {
         return "Product{" +
                 "id_product=" + id_product +
@@ -86,6 +86,10 @@ public class Product {
                 ", price_pro=" + price_pro +
                 ", cantidad=" + cantidad +
                 '}';
+    }*/
+    @Override
+    public String toString() {
+        return getName_pro()+" ("+ getId_product()+")";
     }
 
     public static void llenarInformacion(Connection conexion, ObservableList<Product> list)
@@ -142,11 +146,12 @@ public class Product {
 
         }
         catch (SQLException e) {
-            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            System.out.println(e);
+            /*Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setTitle("Sugerencia");
             alert.setContentText("Asegurese que los datos ingresado sean correctos");
             alert.setHeaderText("Importante!!");
-            alert.show();
+            alert.show();*/
             return 0;
         }
 

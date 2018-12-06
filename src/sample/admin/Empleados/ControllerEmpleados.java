@@ -32,7 +32,7 @@ import java.util.ResourceBundle;
 
 public class ControllerEmpleados implements Initializable {
     @FXML
-    private JFXButton btnProducto,btnPermiso,btnEmpleado,btnCategoria,btnExit,BtnReporteMes,BtnReporteAño;
+    private JFXButton btnProducto,btnPermiso,btnEmpleado,btnCategoria,btnExit,BtnReporteMes,BtnReporteAño,BtnReporteEmpleados;
 
     @FXML
     private TextField TxtNombre;
@@ -89,6 +89,7 @@ public class ControllerEmpleados implements Initializable {
 
         BtnReporteMes.setOnAction(miReportInvoiceMES);
         BtnReporteAño.setOnAction(miReportInvoiceAño);
+        BtnReporteEmpleados.setOnAction(miReportInvoiceEmpleados);
 
         MySQL.Connect();
         LlenarTableview();
@@ -96,6 +97,25 @@ public class ControllerEmpleados implements Initializable {
         Seleccionado();
 
     }
+
+    public String destiny_invoiceEmpleados= "src/sample/admin/Reportes/Report_InvoicesEmpleados.pdf";
+    EventHandler<ActionEvent> miReportInvoiceEmpleados = new EventHandler<ActionEvent>()
+    {
+        @Override
+        public void handle(ActionEvent event) {
+            try {
+                File file_invoice = new File(destiny_invoiceEmpleados);
+                file_invoice.getParentFile().mkdirs();
+                Invoice.consulta_facturaAño(destiny_invoiceEmpleados);
+
+            }catch (IOException IOE)
+            {
+                System.out.println(IOE.toString());
+            } catch (DocumentException e) {
+                e.printStackTrace();
+            }
+        }
+    };
 
     public String destiny_invoice= "src/sample/admin/Reportes/Report_InvoicesMes.pdf";
     EventHandler<ActionEvent> miReportInvoiceMES = new EventHandler<ActionEvent>()
@@ -263,6 +283,7 @@ public class ControllerEmpleados implements Initializable {
         //LLamamos el metodo
         MySQL.Connect();
         int resultado = empleado.InsertarEmpleado(MySQL.getConnection());
+        LlenarTableview();
         MySQL.Disconnect();
         if(resultado==1)
         {
@@ -271,7 +292,7 @@ public class ControllerEmpleados implements Initializable {
             alert.setContentText("Se guardo exitosamente");
             alert.setHeaderText("Resultado");
             alert.show();
-            LlenarTableview();
+
             limpiar();
         }
     }

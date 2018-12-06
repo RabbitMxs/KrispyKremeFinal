@@ -35,12 +35,12 @@ public class Category {
         try
         {
             Statement statement = connection.createStatement();
-            ResultSet resultado  = statement.executeQuery("SELECT name FROM category");
+            ResultSet resultado  = statement.executeQuery("SELECT * FROM category");
             while (resultado.next())
             {
                 list.add(new Category
                         (
-                                //Debe coincidir con el nombre de la consulta
+                                resultado.getInt("id_category"),
                                 resultado.getString("name")
                         ));
             }

@@ -33,7 +33,7 @@ import java.util.ResourceBundle;
 public class ControlllerPermisos implements Initializable
 {
     @FXML
-    private JFXButton btnProducto,btnPermiso,btnEmpleado,btnCategoria,btnExit,BtnReporteMes,BtnReporteAño;
+    private JFXButton btnProducto,btnPermiso,btnEmpleado,btnCategoria,btnExit,BtnReporteMes,BtnReporteAño,BtnReporteEmpleados;
 
     @FXML private TextField TxtId;
     @FXML private TextField TxtNombre;
@@ -63,6 +63,7 @@ public class ControlllerPermisos implements Initializable
 
         BtnReporteMes.setOnAction(miReportInvoiceMES);
         BtnReporteAño.setOnAction(miReportInvoiceAño);
+        BtnReporteEmpleados.setOnAction(miReportInvoiceEmpleados);
 
         OnlyNums();
         OnlyText();
@@ -284,6 +285,25 @@ public class ControlllerPermisos implements Initializable
                 File file_invoice = new File(destiny_invoiceAño);
                 file_invoice.getParentFile().mkdirs();
                 Invoice.consulta_facturaAño(destiny_invoiceAño);
+
+            }catch (IOException IOE)
+            {
+                System.out.println(IOE.toString());
+            } catch (DocumentException e) {
+                e.printStackTrace();
+            }
+        }
+    };
+
+    public String destiny_invoiceEmpleados= "src/sample/admin/Reportes/Report_InvoicesEmpleados.pdf";
+    EventHandler<ActionEvent> miReportInvoiceEmpleados = new EventHandler<ActionEvent>()
+    {
+        @Override
+        public void handle(ActionEvent event) {
+            try {
+                File file_invoice = new File(destiny_invoiceEmpleados);
+                file_invoice.getParentFile().mkdirs();
+                Invoice.consulta_facturaAño(destiny_invoiceEmpleados);
 
             }catch (IOException IOE)
             {

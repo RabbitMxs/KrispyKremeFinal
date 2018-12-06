@@ -21,6 +21,7 @@ import sample.models.clases.Employee;
 import sample.models.clases.Product;
 import sample.models.dao.Dao;
 
+import java.io.File;
 import java.io.IOException;
 import java.net.URL;
 import java.util.Optional;
@@ -43,6 +44,8 @@ public class ShoppingCart implements Initializable {
 
     @FXML
     TableView<Product> table_venta=new TableView<>();
+
+    public static final String DEST4 = "results/ticket.pdf";
 
     public void setList(ObservableList<Product> list) {
         this.list = list;
@@ -132,6 +135,18 @@ public class ShoppingCart implements Initializable {
             if(result.get()==btnNo){
                 Dao dao=new Dao();
                 dao.insertInvoice(employee,Double.parseDouble(lbSubtotal.getText()),Double.parseDouble(lbTotal.getText()),payment());
+                try{
+                    File file = new File(DEST4);
+                    file.getParentFile().mkdirs();
+                    Ticket ticket=new Ticket(employee.getId_employee(),Double.parseDouble(lbSubtotal.getText()),Double.parseDouble(lbTotal.getText()));
+                    ticket.createPdf(DEST4);
+                    Alert alert= new Alert(Alert.AlertType.INFORMATION);
+                    alert.setTitle("Ticket");
+                    alert.setHeaderText("Su ticket ha sido generado");
+                    alert.show();
+                }catch(IOException e ){
+                    System.out.println(e);
+                }
                 list.clear();
                 EmployeeView.setList(list);
                 ((Stage)((Button) event.getSource()).getScene().getWindow()).close();

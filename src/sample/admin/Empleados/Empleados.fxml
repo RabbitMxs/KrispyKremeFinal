@@ -85,7 +85,8 @@
             <JFXButton text="Categorias" fx:id="btnCategoria" styleClass="jfx-buttonC"/>
              <JFXButton text="Reporte de Facturas anual" fx:id="BtnReporteAño" styleClass="jfx-buttonC"/>
              <JFXButton text="Reporte de Facturas mensual" fx:id="BtnReporteMes" styleClass="jfx-buttonC"/>
-            <JFXButton text="Exit" fx:id="btnExit" styleClass="jfx-buttonC"/>
+             <JFXButton text="Reporte de Empleado" fx:id="BtnReporteEmpleados" styleClass="jfx-buttonC"/>
+             <JFXButton text="Exit" fx:id="btnExit" styleClass="jfx-buttonC"/>
          </items>
       </ToolBar>
 

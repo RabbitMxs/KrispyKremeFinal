@@ -10,5 +10,6 @@
     <orderEntry type="library" name="bootstrapfx-core-0.2.3" level="project" />
     <orderEntry type="library" name="mysql-connector-java-5.1.47-bin" level="project" />
     <orderEntry type="library" name="itextpdf-5.1.0" level="project" />
+    <orderEntry type="library" name="pdftest-7.1.4-javadoc" level="project" />
   </component>
 </module>

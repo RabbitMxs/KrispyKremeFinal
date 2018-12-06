@@ -59,19 +59,18 @@
                <JFXButton text="Categorias" fx:id="btnCategoria" styleClass="jfx-buttonC"/>
                <JFXButton text="Reporte de Facturas anual" fx:id="BtnReporteAño" styleClass="jfx-buttonC"/>
                <JFXButton text="Reporte de Facturas mensual" fx:id="BtnReporteMes" styleClass="jfx-buttonC"/>
+               <JFXButton text="Reporte de Empleado" fx:id="BtnReporteEmpleados" styleClass="jfx-buttonC"/>
                <JFXButton text="Exit" fx:id="btnExit" styleClass="jfx-buttonC"/>
            </items>
        </ToolBar>
 
 
-      <TableView fx:id="TvProductos" AnchorPane.leftAnchor="541" AnchorPane.topAnchor="36" AnchorPane.bottomAnchor="0" prefWidth="843.0">
+      <TableView fx:id="TvProductos" AnchorPane.leftAnchor="541" AnchorPane.topAnchor="36" AnchorPane.bottomAnchor="0" AnchorPane.rightAnchor="0">
         <columns>
-          <TableColumn fx:id="ClNombre" editable="false" prefWidth="118.0" text="Nombre">
-          </TableColumn>
-          <TableColumn fx:id="ClPrecio" prefWidth="124.0" text="Precio" />
-            <TableColumn fx:id="ClDescripcion" prefWidth="228.0" text="Descripción" />
+             <TableColumn fx:id="ClNombre" editable="false" prefWidth="150.0" text="Nombre"/>
+            <TableColumn fx:id="ClPrecio" prefWidth="110.0" text="Precio" />
+            <TableColumn fx:id="ClDescripcion" prefWidth="430" text="Descripción" />
             <TableColumn fx:id="ClCategoria" prefWidth="139.0" text="Categoria" />
-            <TableColumn fx:id="ClImagen" prefWidth="220.0" text="Imagen" />
         </columns>
       </TableView>
    </children>
