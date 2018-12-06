@@ -51,7 +51,7 @@
                     </cellValueFactory>
                 </TableColumn>
 
-                <TableColumn text="Description" prefWidth="517" style="-fx-alignment: center">
+                <TableColumn text="Descripcion" prefWidth="517" style="-fx-alignment: center">
                     <cellValueFactory>
                         <PropertyValueFactory property="description_pro"/>
                     </cellValueFactory>

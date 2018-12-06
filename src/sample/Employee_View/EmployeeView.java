@@ -20,6 +20,7 @@ import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 import sample.Employee_View.Package.ControllerPackage;
 import sample.Employee_View.Shopping_Cart.ShoppingCart;
+import sample.Main;
 import sample.models.clases.Employee;
 import sample.models.clases.Package;
 import sample.models.clases.Product;
@@ -32,7 +33,6 @@ import java.util.ResourceBundle;
 
 public class EmployeeView implements Initializable {
     static int count=0;
-    ActionEvent controller;
     static double xOffset=0;
     static double yOffser=0;
     Dao dao;
@@ -65,10 +65,6 @@ public class EmployeeView implements Initializable {
 
     @FXML
     Label lbWelcome;
-
-    public void setController(ActionEvent controller) {
-        this.controller = controller;
-    }
 
     public static void setList(ObservableList<Product> lit) {
         list_product = lit;
@@ -200,7 +196,7 @@ public class EmployeeView implements Initializable {
             ((Stage)((Button) event.getSource()).getScene().getWindow()).close();
             list_product.clear();
             new_package.clear();
-            ((Stage)((Button) controller.getSource()).getScene().getWindow()).show();
+            Main.primaryStage.show();
         }
     };
 

@@ -84,7 +84,6 @@ public class Controller implements Initializable {
             FXMLLoader loader= new FXMLLoader(getClass().getResource("Employee_View/Employee_View.fxml"));
             EmployeeView emp=new EmployeeView();
             emp.setEmployee(employee);
-            emp.setController(event);
             loader.setController(emp);//asi se pasa informacion de una ventana a otra atravez del controllador
             root=loader.load();
             Scene scene=new Scene(root);

@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.*?>
 <?import javafx.scene.control.*?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.*?>
 <?import javafx.scene.shape.Circle?>
 <?import javafx.scene.text.*?>
 <AnchorPane prefHeight="700.0" prefWidth="1370.0" style="-fx-background-color: #0d885e;" stylesheets="@../../../Styles/admin.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.admin.Categorias.ControllerCategory">
@@ -11,32 +10,32 @@
       <Pane layoutY="-1.0" prefHeight="717.0" prefWidth="505.0" style="-fx-background-color: #016d48;">
          <children>
             <Circle fx:id="image" fill="DODGERBLUE" layoutX="199.0" layoutY="102.0" radius="88.0" stroke="BLACK" strokeType="INSIDE" />
-            <TextField fx:id="TxtId" layoutX="22.0" layoutY="322.0" prefHeight="44.0" prefWidth="184.0" style="-fx-background-color: #99cc99;">
+            <JFXTextField fx:id="TxtId" layoutX="22.0" layoutY="322.0" prefHeight="44.0" prefWidth="184.0" >
                <font>
                   <Font size="20.0" />
                </font>
-            </TextField>
+            </JFXTextField>
             <Label layoutX="74.0" layoutY="200.0" text="Registro de Categorias" textFill="WHITE">
                <font>
                   <Font size="25.0" />
                </font>
             </Label>
-            <JFXButton fx:id="BtnAgregar" layoutX="11.0" layoutY="530.0" onAction="#Guardar" prefHeight="47.0" prefWidth="142.0" style="-fx-background-color: #99cc99;" text="Agregar" textFill="#070707">
+            <JFXButton fx:id="BtnAgregar" layoutX="11.0" layoutY="530.0" onAction="#Guardar" prefHeight="47.0" prefWidth="142.0" text="Agregar">
                <font>
                   <Font name="Arial" size="24.0" />
                </font>
             </JFXButton>
-            <TextField fx:id="TxtNombre" layoutX="22.0" layoutY="416.0" prefHeight="36.0" prefWidth="184.0" style="-fx-background-color: #99cc99;">
+            <JFXTextField fx:id="TxtNombre" layoutX="22.0" layoutY="416.0" prefHeight="36.0" prefWidth="184.0">
                <font>
                   <Font size="20.0" />
                </font>
-            </TextField>
-            <JFXButton fx:id="BtnActualizar" layoutX="218.0" layoutY="530.0" onAction="#ActualizarRegistro" prefHeight="47.0" prefWidth="142.0" style="-fx-background-color: #99cc99;" text="Actualizar" textFill="#070707">
+            </JFXTextField>
+            <JFXButton fx:id="BtnActualizar" layoutX="218.0" layoutY="530.0" onAction="#ActualizarRegistro" prefHeight="47.0" prefWidth="142.0" text="Actualizar">
                <font>
                   <Font name="Arial" size="24.0" />
                </font>
             </JFXButton>
-            <JFXButton fx:id="BtnEliminar" layoutX="118.0" layoutY="609.0" onAction="#Eliminar" prefHeight="47.0" prefWidth="142.0" style="-fx-background-color: #99cc99;" text="Eliminar" textFill="#070707">
+            <JFXButton fx:id="BtnEliminar" layoutX="118.0" layoutY="609.0" onAction="#Eliminar" prefHeight="47.0" prefWidth="142.0" text="Eliminar">
                <font>
                   <Font name="Arial" size="24.0" />
                </font>
@@ -53,7 +52,20 @@
             </Label>
          </children>
       </Pane>
-      <TableView fx:id="TvCategoria" layoutX="505.0" layoutY="-3.0" prefHeight="716.0" prefWidth="377.0">
+
+      <ToolBar AnchorPane.leftAnchor="505"  AnchorPane.rightAnchor="0">
+         <items>
+            <JFXButton text="Producto" fx:id="btnProducto" styleClass="jfx-buttonC"/>
+            <JFXButton text="Permisos" fx:id="btnPermiso" styleClass="jfx-buttonC"/>
+            <JFXButton text="Empleados" fx:id="btnEmpleado" styleClass="jfx-buttonC"/>
+            <JFXButton text="Categorias" fx:id="btnCategoria" styleClass="jfx-buttonC"/>
+             <JFXButton text="Reporte de Facturas anual" fx:id="BtnReporteAño" styleClass="jfx-buttonC"/>
+             <JFXButton text="Reporte de Facturas mensual" fx:id="BtnReporteMes" styleClass="jfx-buttonC"/>
+            <JFXButton text="Exit" fx:id="btnExit" styleClass="jfx-buttonC"/>
+         </items>
+      </ToolBar>
+
+      <TableView fx:id="TvCategoria" AnchorPane.topAnchor="36" layoutX="505.0"  prefHeight="716.0" prefWidth="377.0">
          <columns>
             <TableColumn fx:id="ClId_Categoria" editable="false" prefWidth="156.0" text="Id Categoria" />
             <TableColumn fx:id="ClNombre" prefWidth="221.0" text="Nombre" />

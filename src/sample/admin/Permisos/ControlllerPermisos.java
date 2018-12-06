@@ -1,26 +1,40 @@
 package sample.admin.Permisos;
 
+import com.itextpdf.text.DocumentException;
+import com.jfoenix.controls.JFXButton;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.Image;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.paint.ImagePattern;
 import javafx.scene.shape.Circle;
+import javafx.stage.Stage;
+import sample.Main;
+import sample.models.clases.Invoice;
 import sample.models.clases.Permit;
 import sample.models.dao.MySQL;
 
+import java.io.File;
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
 public class ControlllerPermisos implements Initializable
 {
+    @FXML
+    private JFXButton btnProducto,btnPermiso,btnEmpleado,btnCategoria,btnExit,BtnReporteMes,BtnReporteAño;
+
     @FXML private TextField TxtId;
     @FXML private TextField TxtNombre;
 
@@ -41,14 +55,59 @@ public class ControlllerPermisos implements Initializable
     {
         Image m=new Image("/Images/Employee.jpg");
         image.setFill(new ImagePattern(m));
+        btnCategoria.setOnAction(event_accion);
+        btnEmpleado.setOnAction(event_accion);
+        btnExit.setOnAction(event_accion);
+        btnPermiso.setOnAction(event_accion);
+        btnProducto.setOnAction(event_accion);
+
+        BtnReporteMes.setOnAction(miReportInvoiceMES);
+        BtnReporteAño.setOnAction(miReportInvoiceAño);
 
         OnlyNums();
         OnlyText();
         MySQL.Connect();
         llenarTable();
         Seleccionado();
-        MySQL.Disconnect();
 
+    }
+
+    EventHandler<ActionEvent> event_accion=new EventHandler<ActionEvent>() {
+        @Override
+        public void handle(ActionEvent event) {
+            try{
+                JFXButton boton= (JFXButton) event.getSource();
+                if(btnCategoria==boton){
+                    m_muestra("./../Categorias/Category.fxml", event);
+                }else if (boton== btnEmpleado){
+                    m_muestra("./../Empleados/Empleados.fxml", event);
+                }if (boton==btnPermiso){
+                    m_muestra("./../Permisos/Permisos.fxml", event);
+                }else if (boton== btnProducto){
+                    m_muestra("./../productos.fxml", event);
+                }else if (btnExit==boton){
+                    ((Stage)((Button) event.getSource()).getScene().getWindow()).close();
+                    Main.primaryStage.show();
+                }
+
+            }catch (IOException e){
+                System.out.println(e);
+            }
+        }
+    };
+
+    public void m_muestra(String ruta, ActionEvent event) throws IOException {
+        Stage Empleado_admin=new Stage();
+        Empleado_admin.setTitle("Admin");
+        Parent root=null;
+        FXMLLoader loader= new FXMLLoader(getClass().getResource(ruta));
+        root=loader.load();
+        Scene scene=new Scene(root);
+        Empleado_admin.setScene(scene);
+        Empleado_admin.setMaximized(true);
+        Empleado_admin.setResizable(true);
+        Empleado_admin.show();
+        ((Stage)((Button) event.getSource()).getScene().getWindow()).close();
     }
 
     public void llenarTable()
@@ -197,6 +256,43 @@ public class ControlllerPermisos implements Initializable
         }
 
     }
+
+    public String destiny_invoice= "src/sample/admin/Reportes/Report_InvoicesMes.pdf";
+    EventHandler<ActionEvent> miReportInvoiceMES = new EventHandler<ActionEvent>()
+    {
+        @Override
+        public void handle(ActionEvent event) {
+            try {
+                File file_invoice = new File(destiny_invoice);
+                file_invoice.getParentFile().mkdirs();
+                Invoice.consulta_facturaMes(destiny_invoice);
+
+            }catch (IOException IOE)
+            {
+                System.out.println(IOE.toString());
+            } catch (DocumentException e) {
+                e.printStackTrace();
+            }
+        }
+    };
+    public String destiny_invoiceAño= "src/sample/admin/Reportes/Report_InvoicesAño.pdf";
+    EventHandler<ActionEvent> miReportInvoiceAño = new EventHandler<ActionEvent>()
+    {
+        @Override
+        public void handle(ActionEvent event) {
+            try {
+                File file_invoice = new File(destiny_invoiceAño);
+                file_invoice.getParentFile().mkdirs();
+                Invoice.consulta_facturaAño(destiny_invoiceAño);
+
+            }catch (IOException IOE)
+            {
+                System.out.println(IOE.toString());
+            } catch (DocumentException e) {
+                e.printStackTrace();
+            }
+        }
+    };
 
 
     public void OnlyNums()

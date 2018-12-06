@@ -140,7 +140,7 @@ public class ShoppingCart implements Initializable {
                 customer.setTitle("Cliente");
                 Parent root=null;
                 FXMLLoader loader= new FXMLLoader(getClass().getResource("Customer/Customer.fxml"));
-                ControllerCustomer confi=new ControllerCustomer(employee,Double.parseDouble(lbSubtotal.getText()),Double.parseDouble(lbTotal.getText()),payment());
+                ControllerCustomer confi=new ControllerCustomer(employee,Double.parseDouble(lbTotal.getText()),Double.parseDouble(lbSubtotal.getText()),payment());
                 loader.setController(confi);
                 try {
                     root=loader.load();

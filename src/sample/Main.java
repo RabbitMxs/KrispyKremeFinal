@@ -7,9 +7,12 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 public class Main extends Application {
+    public static Stage primaryStage;//esta es static para poder entrar desde otra clase a ella
+
 
     @Override
-    public void start(Stage primaryStage) throws Exception{
+    public void start(Stage _primaryStage) throws Exception{
+        primaryStage=_primaryStage;
         Parent root = FXMLLoader.load(getClass().getResource("sample.fxml"));
         primaryStage.setTitle("Login");
         Scene scene=new Scene(root);

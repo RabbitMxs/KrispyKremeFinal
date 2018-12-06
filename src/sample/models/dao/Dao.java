@@ -73,8 +73,8 @@ public class Dao {
     public Boolean insertInvoice(Employee employee, double subtotal, double total,int payment) {
         try {
             String query = "insert into invoice "
-                    + " (subtotal, total, id_customer, id_payment, id_employee)"
-                    + " values (?, ?, ?, ?, ?)";
+                    + " (subtotal, total, id_customer, id_payment, id_employee,payment_day)"
+                    + " values (?, ?, ?, ?, ?,now())";
             PreparedStatement st =  conn.prepareStatement(query);
             st.setDouble(1, subtotal);
             st.setDouble(  2, total);
@@ -162,8 +162,8 @@ public class Dao {
     public Boolean insertInvoiceCliente(Employee employee, double subtotal, double total,int payment, int customer) {
         try {
             String query = "insert into invoice "
-                    + " (subtotal, total, id_customer, id_payment, id_employee)"
-                    + " values (?, ?, ?, ?, ?)";
+                    + " (subtotal, total, id_customer, id_payment, id_employee,payment_day)"
+                    + " values (?, ?, ?, ?, ?,now())";
             PreparedStatement st =  conn.prepareStatement(query);
             st.setDouble(1, subtotal);
             st.setDouble(2, total);
